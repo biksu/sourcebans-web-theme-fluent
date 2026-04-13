@@ -1,19 +1,19 @@
 {if NOT $permission_listmods}
     <section class="error padding">
         <i class="fas fa-exclamation-circle"></i>
-        <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+        <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
         <div class="error_content">
-            Access Denied!
+            Brak dostępu!
         </div>
 
         <div class="error_code">
-            Error code: <span class="text:bold">403 Forbidden</span>
+            Kod błędu: <span class="text:bold">403 Forbidden</span>
         </div>
     </section>
 {else}
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-gamepad"></i> Server Mods ({$mod_count})</h2>
+        <h2><i class="fas fa-gamepad"></i> Mody serwerów ({$mod_count})</h2>
     </div>
 
     <div class="padding">
@@ -21,14 +21,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Mod icon</th>
-                        <th class="text:left">Name</th>
-                        <th class="text:left">Mod Folder</th>
+                        <th>Ikona moda</th>
+                        <th class="text:left">Nazwa</th>
+                        <th class="text:left">Folder moda</th>
                         <th>
-                            <span title="SteamID Universe (X of STEAM_X:Y:Z)">SU</span>
+                            <span title="Uniwersum SteamID (X w STEAM_X:Y:Z)">SU</span>
                         </th>
                         {if $permission_editmods || $permission_deletemods}
-                            <th>Action</th>
+                            <th>Akcja</th>
                         {/if}
                     </tr>
                 </thead>
@@ -52,13 +52,13 @@
                                     {if $permission_editmods}
                                         <a href="index.php?p=admin&c=mods&o=edit&id={$mod.mid}"
                                             class="button button-light margin-right:half">
-                                            Edit
+                                            Edytuj
                                         </a>
                                     {/if}
                                     {if $permission_deletemods}
                                         <button onclick="RemoveMod('{$mod.name|escape:'quotes'|smarty_htmlspecialchars}', '{$mod.mid}');"
                                             class="button button-light">
-                                            Delete
+                                            Usuń
                                         </button>
                                     {/if}
                                 </td>

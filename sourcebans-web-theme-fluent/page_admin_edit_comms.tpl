@@ -3,22 +3,22 @@
     <div id="0">
         <div id="msg-green" style="display:none;">
             <i class="fas fa-check fa-2x"></i>
-            <b>Block Updated</b>
+            <b>Zaktualizowano blokadę</b>
             <br />
-            The comms details have been updated.<br /><br />
-            <i>Redirecting back to comms blocks page</i>
+            Szczegóły blokady komunikacji zostały zaktualizowane.<br /><br />
+            <i>Przekierowywanie z powrotem do strony blokad komunikacji</i>
         </div>
         <div class="admin_tab_content_title">
-            <h2><i class="fas fa-user-edit"></i> Block comms Details</h2>
+            <h2><i class="fas fa-user-edit"></i> Szczegóły blokady komunikacji</h2>
 		</div>
 		<div class="padding">
-            For more information or help regarding a certain subject move your mouse over the question mark.<br /><br />
+            Aby uzyskać więcej informacji lub pomoc dotyczącą danego tematu, najedź kursorem na znak zapytania.<br /><br />
             <input type="hidden" name="insert_type" value="add">
             <table width="90%" border="0" style="border-collapse:collapse;" id="group.details" cellpadding="3">
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Player name" message="This is the name of the player that was blocked."}-Player name
+                            -{help_icon title="Nazwa gracza" message="To jest nazwa gracza, który został zablokowany."}-Nazwa gracza
                         </div>
                     </td>
                     <td>
@@ -30,7 +30,7 @@
                 <tr>
                     <td valign="top">
                         <div class="rowdesc">
-                            -{help_icon title="Steam ID" message="This is the Steam ID of the player that is blocked. You may want to type a Community ID either."}-Steam ID
+                            -{help_icon title="SteamID" message="To jest SteamID zablokowanego gracza. Możesz też wpisać Community ID."}-SteamID
                         </div>
                     </td>
                 <td>
@@ -43,14 +43,14 @@
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Block Type" message="Choose what to block - chat or voice &#38; both"}-Block Type
+                            -{help_icon title="Typ blokady" message="Wybierz, co zablokować - czat, głos lub oba"}-Typ blokady
                         </div>
                     </td>
                     <td>
                         <div align="left">
                             <select id="type" name="type" TABINDEX=2 class="submit-fields">
-                                    <option value="1">Voice</option>
-                                    <option value="2">Chat</option>
+                                    <option value="1">Głos</option>
+                                    <option value="2">Czat</option>
                                 </select>
                         </div>
                     </td>
@@ -58,23 +58,23 @@
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Block Reason" message="Explain in detail, why this block is being made."}-Block Reason
+                            -{help_icon title="Powód blokady" message="Opisz szczegółowo, dlaczego ta blokada jest nakładana."}-Powód blokady
                         </div>
                     </td>
                     <td>
                         <div align="left">
                             <select id="listReason" name="listReason" TABINDEX=4 class="submit-fields" onChange="changeReason(this[this.selectedIndex].value);">
-                                <option value="" selected> -- Select Reason -- </option>
-                                <optgroup label="Behavior">
-                                    <option value="Obscene language">Obscene language</option>
-                                    <option value="Insult players">Insult players</option>
-                                    <option value="Admin disrespect">Admin disrespect</option>
-                                    <option value="Inappropriate Language">Inappropriate Language</option>
-                                    <option value="Trading">Trading</option>
+                                <option value="" selected> -- Wybierz powód -- </option>
+                                <optgroup label="Zachowanie">
+                                    <option value="Obscene language">Wulgarne słownictwo</option>
+                                    <option value="Insult players">Obrażanie graczy</option>
+                                    <option value="Admin disrespect">Brak szacunku do administratora</option>
+                                    <option value="Inappropriate Language">Niestosowny język</option>
+                                    <option value="Trading">Handel</option>
                                     <option value="Spam in chat/voice">Spam</option>
-                                    <option value="Advertisement">Advertisement</option>
+                                    <option value="Advertisement">Reklama</option>
                                 </optgroup>
-                               	    <option value="other">Custom</option>
+                               	    <option value="other">Własny</option>
                            </select>
                                 <div id="dreason" style="display:none;">
                                     <textarea class="submit-fields" TABINDEX=4 cols="30" rows="5" id="txtReason" name="txtReason"></textarea>
@@ -85,47 +85,47 @@
                 </tr>
                 <tr>
                     <td valign="top" width="35%">
-                        <div class="rowdesc">-{help_icon title="Block Length" message="Select how long you want to block this person for."}-Ban Length </div>
+                        <div class="rowdesc">-{help_icon title="Długość blokady" message="Wybierz, na jak długo chcesz zablokować tę osobę."}-Długość blokady </div>
                     </td>
                     <td>
                         <div align="left">
                             <select id="banlength" name="banlength" TABINDEX=4 class="submit-fields">
-                                <option value="0">Permanent</option>
-                                <optgroup label="minutes">
-                                    <option value="1">1 minute</option>
-                                    <option value="5">5 minutes</option>
-                                    <option value="10">10 minutes</option>
-                                    <option value="15">15 minutes</option>
-                                    <option value="30">30 minutes</option>
-                                    <option value="45">45 minutes</option>
+                                <option value="0">Permanentna</option>
+                                <optgroup label="minuty">
+                                    <option value="1">1 minuta</option>
+                                    <option value="5">5 minut</option>
+                                    <option value="10">10 minut</option>
+                                    <option value="15">15 minut</option>
+                                    <option value="30">30 minut</option>
+                                    <option value="45">45 minut</option>
                                 </optgroup>
-                                <optgroup label="hours">
-                                    <option value="60">1 hour</option>
-                                    <option value="120">2 hours</option>
-                                    <option value="180">3 hours</option>
-                                    <option value="240">4 hours</option>
-                                    <option value="480">8 hours</option>
-                                    <option value="720">12 hours</option>
+                                <optgroup label="godziny">
+                                    <option value="60">1 godzina</option>
+                                    <option value="120">2 godziny</option>
+                                    <option value="180">3 godziny</option>
+                                    <option value="240">4 godziny</option>
+                                    <option value="480">8 godzin</option>
+                                    <option value="720">12 godzin</option>
                                 </optgroup>
-                                <optgroup label="days">
-                                    <option value="1440">1 day</option>
-                                    <option value="2880">2 days</option>
-                                    <option value="4320">3 days</option>
-                                    <option value="5760">4 days</option>
-                                    <option value="7200">5 days</option>
-                                    <option value="8640">6 days</option>
+                                <optgroup label="dni">
+                                    <option value="1440">1 dzień</option>
+                                    <option value="2880">2 dni</option>
+                                    <option value="4320">3 dni</option>
+                                    <option value="5760">4 dni</option>
+                                    <option value="7200">5 dni</option>
+                                    <option value="8640">6 dni</option>
                                 </optgroup>
-                                <optgroup label="weeks">
-                                    <option value="10080">1 week</option>
-                                    <option value="20160">2 weeks</option>
-                                    <option value="30240">3 weeks</option>
+                                <optgroup label="tygodnie">
+                                    <option value="10080">1 tydzień</option>
+                                    <option value="20160">2 tygodnie</option>
+                                    <option value="30240">3 tygodnie</option>
                                     </optgroup>
-                                <optgroup label="months">
-                                    <option value="43200">1 month</option>
-                                    <option value="86400">2 months</option>
-                                    <option value="129600">3 months</option>
-                                    <option value="259200">6 months</option>
-                                    <option value="518400">12 months</option>
+                                <optgroup label="miesiące">
+                                    <option value="43200">1 miesiąc</option>
+                                    <option value="86400">2 miesiące</option>
+                                    <option value="129600">3 miesiące</option>
+                                    <option value="259200">6 miesięcy</option>
+                                    <option value="518400">12 miesięcy</option>
                                 </optgroup>
                             </select>
                         </div>
@@ -138,8 +138,8 @@
                         <input type="hidden" name="did" id="did" value="" />
                         <input type="hidden" name="dname" id="dname" value="" />
 						&nbsp;
-                        -{sb_button text="Save Changes" class="ok" id="editban" submit=true}-
-                        -{sb_button text="Back" onclick="history.go(-1)" class="cancel" id="back" submit=false}-
+                        -{sb_button text="Zapisz zmiany" class="ok" id="editban" submit=true}-
+                        -{sb_button text="Wstecz" onclick="history.go(-1)" class="cancel" id="back" submit=false}-
                     </td>
                 </tr>
             </table>

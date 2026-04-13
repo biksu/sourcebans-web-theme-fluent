@@ -5,11 +5,12 @@
 	  <div class="layout_container flex flex-jc:space-between flex-ai:center">
 	    <div class="flex flex-fd:column text:left">
 	      <a href="https://sbpp.github.io/" target="_blank" rel="noopener">SourceBans++</a> {$version}{$git}
-	      <span>Powered by <a href="https://www.sourcemod.net" target="_blank" rel="noopener">SourceMod</a></span>
+	      <span>Napędzane przez <a href="https://www.sourcemod.net" target="_blank" rel="noopener">SourceMod</a></span>
 	    </div>
 	    <div class="flex flex-fd:column text:right">
 	      <span>Copyright © {Config::get('template.title')}</span>
-	      <span><i class="fas fa-code"></i> Original <a href="https://github.com/Rushaway/sourcebans-web-theme-fluent" title="Theme Fluent for SourceBans++" target="_blank" rel="noopener">Theme</a> by <a href="https://axendev.net/" title="Theme by aXenDev" target="_blank" rel="noopener">aXenDev</a></span>
+	      <span>Oryginalny <a href="https://github.com/Rushaway/sourcebans-web-theme-fluent" title="Theme Fluent for SourceBans++" target="_blank" rel="noopener">motyw</a> stworzony przez <a href="https://axendev.net/" title="Theme by aXenDev" target="_blank" rel="noopener">aXenDev</a></span>
+		  <span>Zmodyfikowane przez <a href="https://steamcommunity.com/id/biksu/" title="BiKsu" target="_blank" rel="noopener">BiKsu</a></span>
 	    </div>
 	  </div>
 	</footer>

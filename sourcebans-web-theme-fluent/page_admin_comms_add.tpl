@@ -1,89 +1,89 @@
 {if NOT $permission_addban}
     <section class="error padding">
         <i class="fas fa-exclamation-circle"></i>
-        <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+        <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
         <div class="error_content">
-            Access Denied!
+            Brak dostępu!
         </div>
 
         <div class="error_code">
-            Error code: <span class="text:bold">403 Forbidden</span>
+            Kod błędu: <span class="text:bold">403 Forbidden</span>
         </div>
     </section>
 {else}
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-microphone-alt-slash"></i> Add Block</h2>
+        <h2><i class="fas fa-microphone-alt-slash"></i> Dodaj blokadę</h2>
     </div>
 
     <div class="padding">
         <div id="msg-green" class="message message:succes margin-bottom:half" style="display: none;">
-            <h3>Block Added</h3>
-            <div>The new admin has been successfully added to the system.</div>
-            <div class="text:italic">Redirecting back to comms page</div>
+            <h3>Dodano blokadę</h3>
+            <div>Nowa blokada została pomyślnie dodana do systemu.</div>
+            <div class="text:italic">Przekierowywanie z powrotem do strony komunikacji</div>
         </div>
 
         <div class="margin-bottom">
-            For more information or help regarding a certain subject move your mouse over the question mark.
+            Aby uzyskać więcej informacji lub pomoc dotyczącą danego tematu, najedź kursorem na znak zapytania.
         </div>
 
         <div class="margin-bottom:half">
             <label for="nickname" class="form-label form-label:bottom">
-                Nickname
+                Nick
             </label>
 
             <input type="hidden" id="fromsub" value="" />
             <input type="text" TABINDEX=1 class="form-input form-full" id="nickname" name="nickname" />
 
             <div class="form-desc">
-                Type the nickname of the person that you are banning.
+                Wpisz nick osoby, którą chcesz zablokować.
             </div>
             <div id="nick.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
 
         <div class="margin-bottom:half">
             <label for="steam" class="form-label form-label:bottom">
-                Steam ID / Community ID
+                SteamID / Community ID
             </label>
 
             <input type="text" TABINDEX=3 class="form-input form-full" id="steam" name="steam" />
 
             <div class="form-desc">
-                The Steam ID or Community ID of the person to ban.
+                SteamID lub Community ID osoby do zablokowania.
             </div>
             <div id="steam.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
 
         <div class="margin-bottom:half">
             <label for="type" class="form-label form-label:bottom">
-                Block Type
+                Typ blokady
             </label>
 
             <select id="type" name="type" TABINDEX=2 class="form-select form-full">
-                <option value="1">Voice</option>
-                <option value="2">Chat</option>
-                <option value="3">Chat &amp; Voice</option>
+                <option value="1">Głos</option>
+                <option value="2">Czat</option>
+                <option value="3">Czat i głos</option>
             </select>
         </div>
 
         <div class="margin-bottom:half">
             <label for="listReason" class="form-label form-label:bottom">
-                Block Reason
+                Powód blokady
             </label>
 
             <select id="listReason" name="listReason" TABINDEX=4 class="form-select form-full"
                 onChange="changeReason(this[this.selectedIndex].value);">
-                <option value="" selected> -- Select Reason -- </option>
-                <optgroup label="Violation">
-                    <option value="Obscene language">Obscene language</option>
-                    <option value="Insult players">Insult players</option>
-                    <option value="Admin disrespect">Admin disrespect</option>
-                    <option value="Inappropriate Language">Inappropriate Language</option>
-                    <option value="Trading">Trading</option>
+                <option value="" selected> -- Wybierz powód -- </option>
+                <optgroup label="Naruszenie">
+                    <option value="Obscene language">Wulgarne słownictwo</option>
+                    <option value="Insult players">Obrażanie graczy</option>
+                    <option value="Admin disrespect">Brak szacunku do administratora</option>
+                    <option value="Inappropriate Language">Niestosowny język</option>
+                    <option value="Trading">Handel</option>
                     <option value="Spam in chat/voice">Spam</option>
-                    <option value="Advertisement">Advertisement</option>
+                    <option value="Advertisement">Reklama</option>
                 </optgroup>
-                <option value="other">Other Reason</option>
+                <option value="other">Inny powód</option>
             </select>
 
             <div id="dreason" style="display:none;">
@@ -92,53 +92,53 @@
             </div>
 
             <div class="form-desc">
-                Explain in detail, why this block is being made.
+                Opisz szczegółowo, dlaczego ta blokada jest nakładana.
             </div>
             <div id="reason.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
 
         <div class="margin-bottom:half">
             <label for="banlength" class="form-label form-label:bottom">
-                Block Length
+                Długość blokady
             </label>
 
             <select id="banlength" TABINDEX=5 class="form-select form-full">
-                <option value="0">Permanent</option>
-                <optgroup label="minutes">
-                    <option value="1">1 minute</option>
-                    <option value="5">5 minutes</option>
-                    <option value="10">10 minutes</option>
-                    <option value="15">15 minutes</option>
-                    <option value="30">30 minutes</option>
-                    <option value="45">45 minutes</option>
+                <option value="0">Permanentna</option>
+                <optgroup label="minuty">
+                    <option value="1">1 minuta</option>
+                    <option value="5">5 minut</option>
+                    <option value="10">10 minut</option>
+                    <option value="15">15 minut</option>
+                    <option value="30">30 minut</option>
+                    <option value="45">45 minut</option>
                 </optgroup>
-                <optgroup label="hours">
-                    <option value="60">1 hour</option>
-                    <option value="120">2 hours</option>
-                    <option value="180">3 hours</option>
-                    <option value="240">4 hours</option>
-                    <option value="480">8 hours</option>
-                    <option value="720">12 hours</option>
+                <optgroup label="godziny">
+                    <option value="60">1 godzina</option>
+                    <option value="120">2 godziny</option>
+                    <option value="180">3 godziny</option>
+                    <option value="240">4 godziny</option>
+                    <option value="480">8 godzin</option>
+                    <option value="720">12 godzin</option>
                 </optgroup>
-                <optgroup label="days">
-                    <option value="1440">1 day</option>
-                    <option value="2880">2 days</option>
-                    <option value="4320">3 days</option>
-                    <option value="5760">4 days</option>
-                    <option value="7200">5 days</option>
-                    <option value="8640">6 days</option>
+                <optgroup label="dni">
+                    <option value="1440">1 dzień</option>
+                    <option value="2880">2 dni</option>
+                    <option value="4320">3 dni</option>
+                    <option value="5760">4 dni</option>
+                    <option value="7200">5 dni</option>
+                    <option value="8640">6 dni</option>
                 </optgroup>
-                <optgroup label="weeks">
-                    <option value="10080">1 week</option>
-                    <option value="20160">2 weeks</option>
-                    <option value="30240">3 weeks</option>
+                <optgroup label="tygodnie">
+                    <option value="10080">1 tydzień</option>
+                    <option value="20160">2 tygodnie</option>
+                    <option value="30240">3 tygodnie</option>
                 </optgroup>
-                <optgroup label="months">
-                    <option value="43200">1 month</option>
-                    <option value="86400">2 months</option>
-                    <option value="129600">3 months</option>
-                    <option value="259200">6 months</option>
-                    <option value="518400">12 months</option>
+                <optgroup label="miesiące">
+                    <option value="43200">1 miesiąc</option>
+                    <option value="86400">2 miesiące</option>
+                    <option value="129600">3 miesiące</option>
+                    <option value="259200">6 miesięcy</option>
+                    <option value="518400">12 miesięcy</option>
                 </optgroup>
             </select>
 
@@ -146,8 +146,8 @@
         </div>
 
         <div class="flex flex-ai:center flex-jc:space-between margin-top">
-            {sb_button text="Add block" onclick="ProcessBan();" class="button button-success" id="aban" submit=false}
-            {sb_button text="Back" onclick="history.go(-1)" class="button button-light" id="aback"}
+            {sb_button text="Dodaj blokadę" onclick="ProcessBan();" class="button button-success" id="aban" submit=false}
+            {sb_button text="Wstecz" onclick="history.go(-1)" class="button button-light" id="aback"}
         </div>
     </div>
 {/if}

@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<link rel="Shortcut Icon" href="../images/favicon.ico" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.0/css/all.css">
-		<meta name="description" content="Sourcebans for website - Upload file" />
+		<meta name="description" content="Prześlij plik : SourceBans" />
 		<title>Upload File : SourceBans</title>
 	</head>
 
@@ -21,8 +21,8 @@
    ">
 		<h3>{$title}</h3>
 		
-		<p>Plese select the file to upload.<br />
-		The file must either be {$formats} file format.<br />
+		<p>Wybierz plik do przesłania.<br />
+		Plik musi być w formacie: {$formats}.<br />
 		<b>{$message}</b></p>
 
 		<form action="" method="POST" id="{$form_name}" enctype="multipart/form-data">
@@ -45,7 +45,7 @@
 						border: 0;
 						margin-top: 5px;"
 					type="submit">
-				<i class="fas fa-save"></i> Save
+				<i class="fas fa-save"></i> Zapisz
 			</button>
 		</form>
 	</body>

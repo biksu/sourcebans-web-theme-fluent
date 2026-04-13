@@ -1,5 +1,5 @@
 <div class="admin_tab_content_title">
-    <h2>System Log {$clear_logs}</h2>
+    <h2>Dziennik systemu {$clear_logs}</h2>
 </div>
 
 <div class="padding">
@@ -13,10 +13,10 @@
         <table>
             <thead>
                 <tr>
-                    <th>Type</th>
-                    <th class="text:left">Event</th>
-                    <th class="text:left">Date/Time</th>
-                    <th>User</th>
+                    <th>Typ</th>
+                    <th class="text:left">Zdarzenie</th>
+                    <th class="text:left">Data/godzina</th>
+                    <th>Użytkownik</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,22 +36,22 @@
                                     </div>
 
                                     <div class="margin-bottom:half">
-                                        <span class="text:bold">Parent Function:</span>
+                                        <span class="text:bold">Funkcja nadrzędna:</span>
 
                                         {if $log.function}
                                             <span>{$log.function}</span>
                                         {else}
-                                            <span class="text:italic">No information</span>
+                                            <span class="text:italic">Brak informacji</span>
                                         {/if}
                                     </div>
 
                                     <div class="margin-bottom:half">
-                                        <span class="text:bold">Query String:</span>
+                                        <span class="text:bold">Ciąg zapytania:</span>
 
                                         {if $log.query}
                                             <span>{textformat wrap=62 wrap_cut=true}{$log.query}{/textformat}</span>
                                         {else}
-                                            <span class="text:italic">No information</span>
+                                            <span class="text:italic">Brak informacji</span>
                                         {/if}
                                     </div>
 

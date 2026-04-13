@@ -1,16 +1,16 @@
 <div class="layout_box flex:11 admin_tab_content tabcontent" id="View Permissions" style="display: block;">
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-address-card"></i> Your Permissions</h2>
+        <h2><i class="fas fa-address-card"></i> Twoje uprawnienia</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom">
-            The following is a list of the permissions that you have on this system.
+            Poniżej znajduje się lista uprawnień, które posiadasz w tym systemie.
         </div>
 
         <div class="flex m:flex-fd:column">
             <div class="flex:11">
-                <h3 style="color: var(--table-permanent-text);">Web Permissions</h3>
+                <h3 style="color: var(--table-permanent-text);">Uprawnienia WWW</h3>
 
                 <ul>
                     -{if $web_permissions}-
@@ -24,7 +24,7 @@
             </div>
 
             <div class="flex:11">
-                <h3 style="color: var(--table-unbanned-text);">Server Permissions</h3>
+                <h3 style="color: var(--table-unbanned-text);">Uprawnienia serwera</h3>
 
                 <ul>
                     -{if $server_permissions}-
@@ -42,20 +42,20 @@
 
 <div class="layout_box flex:11 admin_tab_content tabcontent" id="Change Password">
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-key"></i> Change Password</h2>
+        <h2><i class="fas fa-key"></i> Zmień hasło</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom:half">
             <label for="current" class="form-label form-label:bottom">
-                Current Password
+                Obecne hasło
             </label>
 
             <input type="password" onblur="xajax_CheckPassword(-{$user_aid}-, $('current').value);"
                 class="form-input form-full" id="current" name="current" />
 
             <div class="form-desc">
-                We need to know your current password to verify its you.
+                Musimy znać Twoje obecne hasło, aby potwierdzić Twoją tożsamość.
             </div>
 
             <div id="current.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -63,14 +63,14 @@
 
         <div class="margin-bottom">
             <label for="pass1" class="form-label form-label:bottom">
-                New Password
+                Nowe hasło
             </label>
 
             <input class="form-input form-full" type="password" onkeyup="checkYourAcctPass();" id="pass1" value=""
                 name="pass1" />
 
             <div class="form-desc">
-                Type your new password here.
+                Wpisz tutaj nowe hasło.
             </div>
 
             <div id="pass1.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -78,14 +78,14 @@
 
         <div class="margin-bottom:half">
             <label for="pass2" class="form-label form-label:bottom">
-                Confirm Password
+                Potwierdź hasło
             </label>
 
             <input type="password" onkeyup="checkYourAcctPass();" class="form-input form-full" id="pass2"
                 name="pass2" />
 
             <div class="form-desc">
-                Type your new password here.
+                Wpisz tutaj nowe hasło.
             </div>
 
             <div id="pass2.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -93,9 +93,9 @@
 
         <div class="flex flex-ai:center flex-jc:space-between">
             <input type="submit" onclick="xajax_CheckPassword(-{$user_aid}-, $('current').value);dispatch();"
-                name="button" class="button button-success" id="button" value="Save" />
+                name="button" class="button button-success" id="button" value="Zapisz" />
             <input type="submit" onclick="history.go(-1)" name="button" class="button button-light" id="button"
-                value="Cancel" />
+                value="Anuluj" />
         </div>
     </div>
 </div>
@@ -103,25 +103,24 @@
 
 <div class="layout_box flex:11 admin_tab_content tabcontent" id="Server Password">
     <div class="admin_tab_content_title">
-        <h2><i class="fab fa-steam-symbol"></i> Change Server Password</h2>
+        <h2><i class="fab fa-steam-symbol"></i> Zmień hasło serwera</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom">
             <div>
-                You will need to specify this password in the game server before you can use your admin rights.
+                 Musisz ustawić to hasło na serwerze gry, aby móc korzystać z uprawnień administratora.
             </div>
             <div>
-                Click <a href="http://wiki.alliedmods.net/Adding_Admins_%28SourceMod%29#Passwords"
-                    title="SourceMod Password Info" target="_blank" rel="noopener" class="text:bold">here</a> for more
-                info.
+                Kliknij <a href="http://wiki.alliedmods.net/Adding_Admins_%28SourceMod%29#Passwords"
+                    title="SourceMod Password Info" target="_blank" rel="noopener" class="text:bold">tutaj</a>, aby uzyskać więcej informacji. 
             </div>
         </div>
 
         -{if $srvpwset}-
             <div class="margin-bottom:half">
                 <label for="scurrent" class="form-label form-label:bottom">
-                    Current Server Password
+                    Obecne hasło serwera
                 </label>
 
                 <input type="password" onblur="xajax_CheckSrvPassword(-{$user_aid}-, $('scurrent').value);"
@@ -137,14 +136,14 @@
 
         <div class="margin-bottom:half">
             <label for="spass1" class="form-label form-label:bottom">
-                New Password
+                Nowe hasło
             </label>
 
             <input class="form-input form-full" type="password" onkeyup="checkYourSrvPass();" id="spass1" value=""
                 name="spass1" />
 
             <div class="form-desc">
-                Type your new server password here.
+                Wpisz tutaj nowe hasło serwera.
             </div>
 
             <div id="spass1.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -152,14 +151,14 @@
 
         <div class="margin-bottom:half">
             <label for="spass2" class="form-label form-label:bottom">
-                Confirm Password
+                Potwierdź hasło
             </label>
 
             <input type="password" onkeyup="checkYourSrvPass();" class="form-input form-full" id="spass2"
                 name="spass2" />
 
             <div class="form-desc">
-                Please type your new server password again to avoid a mistake.
+                Wpisz ponownie nowe hasło serwera, aby uniknąć błędu.
             </div>
 
             <div id="spass2.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -170,11 +169,11 @@
                 <input type="checkbox" id="delspass" class="form-check" name="delspass" />
 
                 <label for="delspass" class="form-label form-label:left">
-                    Remove Password
+                    Usuń hasło
                 </label>
 
                 <div class="form-desc">
-                    Check this box, if you want to delete your server password.
+                    Zaznacz to pole, jeśli chcesz usunąć hasło serwera.
                 </div>
             </div>
         -{/if}-
@@ -192,13 +191,13 @@
 
 <div class="layout_box flex:11 admin_tab_content tabcontent" id="Change Email">
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-envelope"></i> Change E-Mail</h2>
+        <h2><i class="fas fa-envelope"></i> Zmień e-mail</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom:half">
             <label class="form-label form-label:bottom">
-                Current E-Mail
+                Obecny e-mail
             </label>
 
             <div class="text:bold">
@@ -206,19 +205,19 @@
             </div>
 
             <div class="form-desc">
-                This is your current saved E-mail address.
+                To jest Twój aktualnie zapisany adres e-mail.
             </div>
         </div>
 
         <div class="margin-bottom:half">
             <label for="emailpw" class="form-label form-label:bottom">
-                Password
+                Hasło
             </label>
 
             <input class="form-input form-full" type="password" id="emailpw" value="" name="emailpw" />
 
             <div class="form-desc">
-                Type your password here.
+                 Wpisz tutaj swoje hasło.
             </div>
 
             <div id="emailpw.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -226,13 +225,13 @@
 
         <div class="margin-bottom:half">
             <label for="email1" class="form-label form-label:bottom">
-                New E-mail
+                Nowy e-mail
             </label>
 
             <input class="form-input form-full" type="text" id="email1" value="" name="email1" />
 
             <div class="form-desc">
-                Type your new email address here.
+                Wpisz tutaj nowy adres e-mail.
             </div>
 
             <div id="email1.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -240,13 +239,13 @@
 
         <div class="margin-bottom:half">
             <label for="email2" class="form-label form-label:bottom">
-                Confirm E-mail
+                Potwierdź e-mail
             </label>
 
             <input type="text" class="form-input form-full" id="email2" name="email2" />
 
             <div class="form-desc">
-                Please type your new email address again to avoid a mistake.
+                 Wpisz ponownie nowy adres e-mail, aby uniknąć błędu.
             </div>
 
             <div id="email2.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -274,14 +273,14 @@
         if($('pass1').value.length < -{$min_pass_len}-)
         {
             $('pass1.msg').setStyle('display', 'block');
-            $('pass1.msg').setHTML('Your password must be atleast -{$min_pass_len}- letters long');
+            $('pass1.msg').setHTML('Hasło musi mieć co najmniej -{$min_pass_len}- znaków');
             err++;
         } else {
             $('pass1.msg').setStyle('display', 'none');
         }
         if ($('pass2').value != "" && $('pass2').value != $('pass1').value) {
             $('pass2.msg').setStyle('display', 'block');
-            $('pass2.msg').setHTML('Your passwords dont match');
+            $('pass2.msg').setHTML('Hasła nie są zgodne');
             err++;
         } else {
             $('pass2.msg').setStyle('display', 'none');
@@ -297,7 +296,7 @@
 
     const dispatch = () => {
         if ($('current.msg').innerHTML == "Incorrect password.") {
-            alert("Incorrect Password");
+            alert("Nieprawidłowe hasło");
             return false;
         }
         if (checkYourAcctPass() && error == 0) {
@@ -312,14 +311,14 @@
             if($('spass1').value.length < -{$min_pass_len}-)
             {
                 $('spass1.msg').setStyle('display', 'block');
-                $('spass1.msg').setHTML('Your password must be atleast -{$min_pass_len}- letters long');
+                $('spass1.msg').setHTML('Hasło musi mieć co najmniej -{$min_pass_len}- znaków');
                 err++;
             } else {
                 $('spass1.msg').setStyle('display', 'none');
             }
             if ($('spass2').value != "" && $('spass2').value != $('spass1').value) {
                 $('spass2.msg').setStyle('display', 'block');
-                $('spass2.msg').setHTML('Your passwords dont match');
+                $('spass2.msg').setHTML('Hasła nie są zgodne');
                 err++;
             } else {
                 $('spass2.msg').setStyle('display', 'none');
@@ -340,7 +339,7 @@
     const srvdispatch = () => {
         -{if $srvpwset}-
             if ($('scurrent.msg').innerHTML == "Incorrect password.") {
-                alert("Incorrect Password");
+                alert("Nieprawidłowe hasło");
                 return false;
             }
         -{/if}-
@@ -356,7 +355,7 @@
         let err = 0;
         if ($('email1').value == "") {
             $('email1.msg').setStyle('display', 'block');
-            $('email1.msg').setHTML('Please type the new E-mail.');
+            $('email1.msg').setHTML('Wpisz nowy adres e-mail.');
             err++;
         } else {
             $('email1.msg').setStyle('display', 'none');
@@ -364,7 +363,7 @@
 
         if ($('email2').value == "") {
             $('email2.msg').setStyle('display', 'block');
-            $('email2.msg').setHTML('Please retype the new E-mail.');
+            $('email2.msg').setHTML('Wpisz ponownie nowy adres e-mail.');
             err++;
         } else {
             $('email2.msg').setStyle('display', 'none');
@@ -372,13 +371,13 @@
 
         if (err == 0 && $('email2').value != $('email1').value) {
             $('email2.msg').setStyle('display', 'block');
-            $('email2.msg').setHTML('The typed E-mails doesn\'t match.');
+            $('email2.msg').setHTML('Wpisane adresy e-mail nie są zgodne.');
             err++;
         }
 
         if ($('emailpw').value == "") {
             $('emailpw.msg').setStyle('display', 'block');
-            $('emailpw.msg').setHTML('Please type your password.');
+            $('emailpw.msg').setHTML('Wpisz swoje hasło.');
             err++;
         } else {
             $('emailpw.msg').setStyle('display', 'none');

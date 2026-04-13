@@ -1,48 +1,48 @@
 {if NOT $permission_import}
     <section class="error padding">
         <i class="fas fa-exclamation-circle"></i>
-        <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+        <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
         <div class="error_content">
-            Access Denied!
+            Brak dostępu!
         </div>
 
         <div class="error_code">
-            Error code: <span class="text:bold">403 Forbidden</span>
+            Kod błędu: <span class="text:bold">403 Forbidden</span>
         </div>
     </section>
 {else}
     {if NOT $groupbanning_enabled}
         <section class="error padding">
             <i class="fas fa-exclamation-circle"></i>
-            <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+            <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
             <div class="error_content">
-                This feature is disabled!<br />
-                Access Denied!
+                Ta funkcja jest wyłączona!<br />
+                Brak dostępu!
             </div>
 
             <div class="error_code">
-                Error code: <span class="text:bold">423 Locked</span>
+                Kod błędu: <span class="text:bold">423 Locked</span>
             </div>
         </section>
     {else}
         <div class="admin_tab_content_title">
-            <h2><i class="fa-solid fa-people-group"></i> Add Group Ban</h2>
+            <h2><i class="fa-solid fa-people-group"></i> Dodaj bana grupowego</h2>
         </div>
 
         <div class="padding">
             <div class="margin-bottom">
                 {if NOT $list_steam_groups}
                     <div class="margin-bottom">
-                        Here you can add a ban for a whole steam community group.<br />
-                        e.g. <code>http://steamcommunity.com/groups/interwavestudios</code>
+                        Tutaj możesz dodać bana dla całej grupy społeczności Steam.<br />
+                        np. <code>http://steamcommunity.com/groups/interwavestudios</code>
                     </div>
                     <table width="90%" style="border-collapse:collapse;" id="group.details" cellpadding="3">
                         <tr>
                             <td valign="top" width="35%">
                                 <div class="rowdesc">
-                                    {help_icon title="Group Link" message="Type the link to a steam community group."}Group Link
+                                    {help_icon title="Link grupy" message="Wpisz link do grupy społeczności Steam."}Link grupy
                                 </div>
                             </td>
                             <td>
@@ -55,8 +55,8 @@
                         <tr>
                             <td valign="top" width="35%">
                                 <div class="rowdesc">
-                                    {help_icon title="Group Ban Reason" message="Type the reason, why you are going to ban this steam community group."}Group
-                                    Ban Reason
+                                    {help_icon title="Powód bana grupowego" message="Wpisz powód, dla którego chcesz zbanować tę grupę społeczności Steam."}Powód
+                                    bana grupowego
                                 </div>
                             </td>
                             <td>
@@ -70,18 +70,18 @@
                         <tr>
                             <td>&nbsp;</td>
                             <td>
-                                {sb_button text="Add Group Ban" onclick="ProcessGroupBan();" class="ok" id="agban" submit=false}
+                                {sb_button text="Dodaj bana grupowego" onclick="ProcessGroupBan();" class="ok" id="agban" submit=false}
                                 &nbsp;
-                                {sb_button text="Back" onclick="history.go(-1)" class="cancel" id="aback"}
+                                {sb_button text="Wstecz" onclick="history.go(-1)" class="cancel" id="aback"}
                             </td>
                         </tr>
                     </table>
                     {else}
-                        All groups the player {$player_name} is member of are listed here.<br />
-                        Choose the steam groups you want to ban.<br /><br />
+                        Wszystkie grupy, których członkiem jest gracz {$player_name}, są tutaj wylistowane.<br />
+                        Wybierz grupy Steam, które chcesz zbanować.<br /><br />
                         <div id="steamGroupsText" name="steamGroupsText">
                             <i class="fa-solid fa-spinner fa-spin fa-2x" style="font-size: 24px; margin-bottom: 10px;"></i>
-                            <span>Loading the groups. Please wait...</span>
+                            <span>Ładowanie grup. Proszę czekać...</span>
                         </div>
                         <div id="steamGroups" name="steamGroups" style="display:none;">
                             <table id="steamGroupsTable" name="steamGroupsTable" border="0" width="500px">
@@ -89,14 +89,14 @@
                                     <td height="16" class="listtable_1" style="padding:0px;width:3px;" align="center">
                                         <div class="form-check" id="tickswitch" name="tickswitch" onclick="TickSelectAll();"></div>
                                     </td>
-                                    <td height="auto" class="listtable_top" align="left"><b> All Steam Group(s)</b></td>
+                                    <td height="auto" class="listtable_top" align="left"><b> Wszystkie grupy Steam</b></td>
                                 </tr>
                             </table>
-                            &nbsp;&nbsp;L&nbsp;&nbsp;<a href="#" onclick="TickSelectAll();return false;" title="Select All"
-                                name="tickswitchlink" id="tickswitchlink">Select All</a><br /><br />
+                            &nbsp;&nbsp;L&nbsp;&nbsp;<a href="#" onclick="TickSelectAll();return false;" title="Zaznacz wszystkie"
+                                name="tickswitchlink" id="tickswitchlink">Zaznacz wszystkie</a><br /><br />
                             <div class="rowdesc">
-                                {help_icon title="Group Ban Reason" message="Type the reason, why you are going to ban this steam community group."}Group
-                                Ban Reason
+                                {help_icon title="Powód bana grupowego" message="Wpisz powód, dla którego chcesz zbanować tę grupę społeczności Steam."}Powód
+                                bana grupowego
                             </div><br />
                             <div align="left">
                                 <textarea class="submit-fields" TABINDEX=2 cols="30" rows="5" id="groupreason"
@@ -104,7 +104,7 @@
                             </div>
                             <div id="groupreason.msg" class="badentry"></div>
                             <input type="button" class="btn ok" onclick="CheckGroupBan();" name="gban" id="gban"
-                                onmouseover="ButtonOver('gban');" onmouseout="ButtonOver('gban');" value="Add Group Ban">
+                                onmouseover="ButtonOver('gban');" onmouseout="ButtonOver('gban');" value="Dodaj bana grupowego">
                         </div>
                         <div id="steamGroupStatus" name="steamGroupStatus" width="100%"></div>
                         <script type="text/javascript">

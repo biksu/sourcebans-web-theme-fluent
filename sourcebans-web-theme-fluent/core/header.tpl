@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="themes/{$theme}/style/global.css" />
     <link rel="stylesheet" type="text/css" href="themes/{$theme}/style/global.css.map" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.0/css/all.css">
-    <meta name="description" content="Sourcebans for website" />
+    <meta name="description" content="SourceBans dla strony" />
     <script type="text/javascript" src="themes/{$theme}/scripts/sourcebans.js"></script>
     <script type="text/javascript" src="./scripts/mootools.js"></script>
     <script type="text/javascript" src="./scripts/contextMenoo.js"></script>
@@ -29,19 +29,19 @@
         <div class="layout_container responsive_hide:mobile flex flex-jc:space-between flex-ai:center">
             <div class="flex flex-fd:column text:left">
                 <a href="./index.php?p=home" class="header_logo">
-                    <img src="images/{$logo}" alt="SourceBans Logo" />
+                    <img src="images/{$logo}" alt="Logo SourceBans" />
                 </a>
             </div>
             <div class="flex flex-fd:column text:right responsive_show:desktop">
                 <form method="get" action="index.php" onsubmit="validateForm(this)">
                     <input type="hidden" name="p" value="banlist" />
-                    <input class="searchbox" alt="Search Bans" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Search Bans...';}"{/literal} value=" Search Bans..." />
+                    <input class="searchbox" alt="Szukaj banów" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Szukaj banów...';}"{/literal} value=" Szukaj banów..." />
                     <input class="button_search" type="submit" name="Search" value="Search" />
                 </form>
                 
                 <form method="get" action="index.php" onsubmit="validateForm(this)">
                     <input type="hidden" name="p" value="commslist" />
-                    <input class="searchbox" alt="Search Comms" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Search Comms...';}"{/literal} value=" Search Comms... " />
+                    <input class="searchbox" alt="Szukaj blokad komunikacji" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Szukaj blokad komunikacji...';}"{/literal} value=" Szukaj blokad komunikacji..." />
                     <input class="button_search" type="submit" name="Search" value="Search" />
                 </form> 
             </div>

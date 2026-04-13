@@ -1,10 +1,10 @@
 <div class="admin_tab_content_title">
-    <h2><i class="fas fa-cogs"></i> Sourcebans++ Features</h2>
+    <h2><i class="fas fa-cogs"></i> Funkcje SourceBans++</h2>
 </div>
 
 <div class="padding">
     <div class="margin-bottom">
-        For more information or help regarding a certain subject move your mouse over the question mark.
+        Aby uzyskać więcej informacji lub pomoc dotyczącą danego tematu, najedź kursorem na znak zapytania.
     </div>
 
     <form action="" method="post">
@@ -14,23 +14,23 @@
             <input type="checkbox" name="export_public" class="form-check" id="export_public" />
 
             <label for="export_public" class="form-label form-label:left">
-                Enable Public Bans
+                Publiczna lista banów do pobrania
             </label>
 
             <div class="form-desc">
-                Check this box to enable the entire ban list to be publically downloaded and shared.
+                Zaznacz, aby udostępnić publiczne pobieranie i udostępnianie całej listy banów.
             </div>
         </div>
 
         <div class="margin-bottom:half">
             <input type="checkbox" name="enable_kickit" class="form-check" id="enable_kickit" />
 
-            <label for="export_public" class="form-label form-label:left">
-                Enable KickIt
+            <label for="enable_kickit" class="form-label form-label:left">
+                Włącz KickIt
             </label>
 
             <div class="form-desc">
-                Check this box to kick a player when a ban is posted.
+                Zaznacz, aby wyrzucać gracza po dodaniu bana.
             </div>
         </div>
 
@@ -42,17 +42,17 @@
             {/if}
 
             <label for="enable_groupbanning" class="form-label form-label:left">
-                Enable Group Banning
+                Bany grupowe Steam
             </label>
 
             {if !$steamapi}
                 <div class="message message:error margin-top:half">
-                    You haven't set a valid steamapi key in the config.
+                    Nie ustawiono prawidłowego klucza Steam API w konfiguracji.
                 </div>
             {/if}
 
             <div class="form-desc">
-                Check this box, if you want to enable banning of whole steam community groups.
+                Zaznacz, aby umożliwiać banowanie całych grup społeczności Steam.
             </div>
 
             <div id="enable_groupbanning.msg" class="message message:error margin-top:half" style="display: none;">
@@ -63,11 +63,11 @@
             <input type="checkbox" name="enable_friendsbanning" class="form-check" id="enable_friendsbanning" />
 
             <label for="enable_friendsbanning" class="form-label form-label:left">
-                Enable Friend Banning
+                Bany znajomych Steam
             </label>
 
             <div class="form-desc">
-                Check this box, if you want to enable banning all steam community friends of a player.
+                Zaznacz, aby umożliwiać banowanie wszystkich znajomych danego gracza w społeczności Steam.
             </div>
 
             <div id="enable_friendsbanning.msg" class="message message:error margin-top:half" style="display: none;">
@@ -78,11 +78,11 @@
             <input type="checkbox" name="enable_adminrehashing" class="form-check" id="enable_adminrehashing" />
 
             <label for="enable_adminrehashing" class="form-label form-label:left">
-                Enable Admin Rehashing
+                Odświeżanie listy adminów (rehash)
             </label>
 
             <div class="form-desc">
-                Check this box, if you want to enable the admin rehashing everytime an admin/group has been changed.
+                Zaznacz, aby po każdej zmianie administratora lub grupy odświeżać uprawnienia adminów na serwerze.
             </div>
 
             <div id="enable_adminrehashing.msg" class="message message:error margin-top:half" style="display: none;">
@@ -93,11 +93,11 @@
             <input type="checkbox" name="enable_steamlogin" class="form-check" id="enable_steamlogin" />
 
             <label for="enable_steamlogin" class="form-label form-label:left">
-                Enable Normal Login
+                Klasyczne logowanie
             </label>
 
             <div class="form-desc">
-                Check this box, if you want to enable the Normal login option on the login form.
+                Zaznacz, aby pokazać na formularzu logowania opcję logowania klasycznego (login/hasło).
             </div>
 
             <div id="enable_steamlogin.msg" class="message message:error margin-top:half" style="display: none;">
@@ -108,11 +108,11 @@
             <input type="checkbox" name="enable_publiccomments" class="form-check" id="enable_publiccomments" />
 
             <label for="enable_publiccomments" class="form-label form-label:left">
-                Enable Public Comments
+                Publiczne komentarze
             </label>
 
             <div class="form-desc">
-                Check this box, if you want to make admin comments on bans viewable by everyone.
+                Zaznacz, aby komentarze administratorów przy banach były widoczne dla wszystkich.
             </div>
 
             <div id="enable_publiccomments.msg" class="message message:error margin-top:half" style="display: none;">
@@ -120,8 +120,8 @@
         </div>
 
         <div class="flex flex-ai:center flex-jc:space-between">
-            {sb_button text="Save Changes" class="button button-success" id="fsettings" submit=true}
-            {sb_button text="Back" class="button button-light" id="fback"}
+            {sb_button text="Zapisz zmiany" class="button button-success" id="fsettings" submit=true}
+            {sb_button text="Wstecz" class="button button-light" id="fback"}
         </div>
     </form>
 </div>

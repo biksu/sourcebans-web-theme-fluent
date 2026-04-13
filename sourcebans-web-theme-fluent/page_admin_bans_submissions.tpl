@@ -1,24 +1,24 @@
 {if NOT $permission_protests}
     <section class="error padding">
         <i class="fas fa-exclamation-circle"></i>
-        <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+        <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
         <div class="error_content">
-            Access Denied!
+            Brak dostępu!
         </div>
 
         <div class="error_code">
-            Error code: <span class="text:bold">403 Forbidden</span>
+            Kod błędu: <span class="text:bold">403 Forbidden</span>
         </div>
     </section>
 {else}
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-gavel"></i> Ban Submissions (<span id="subcount">{$submission_count}</span>)</h2>
+        <h2><i class="fas fa-gavel"></i> Zgłoszenia banów (<span id="subcount">{$submission_count}</span>)</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom">
-            Click a player's nickname to view information about their submission.
+            Kliknij nick gracza, aby zobaczyć informacje o jego zgłoszeniu.
         </div>
 
         <div class="pagination">
@@ -29,9 +29,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="text:left">Nickname</th>
-                        <th class="text:left">Steam ID</th>
-                        <th>Action</th>
+                        <th class="text:left">Nick</th>
+                        <th class="text:left">SteamID</th>
+                        <th>Akcja</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,18 +51,18 @@
                             <td class="flex flex-jc:center flex-ai:center">
                                 <button class="button button-important margin-right:half"
                                     onclick="xajax_SetupBan({$sub.subid});return false;">
-                                    Ban
+                                    Zbanuj
                                 </button>
 
                                 <a href="index.php?p=admin&c=bans&o=email&type=s&id={$sub.subid}"
                                     class="button button-primary margin-right:half">
-                                    Contact
+                                    Kontakt
                                 </a>
 
                                 {if $permissions_editsub}
                                     <button class="button button-success margin-right:half"
                                         onclick="RemoveSubmission({$sub.subid}, '{$sub.name|smarty_stripslashes}', '1');return false;">
-                                        Archive
+                                        Archiwizuj
                                     </button>
                                 {/if}
 
@@ -84,42 +84,42 @@
 
                                         <ul class="ban_list_detal">
                                             <li>
-                                                <span><i class="fa-solid fa-user"></i> Player</span>
+                                                <span><i class="fa-solid fa-user"></i> Gracz</span>
                                                 <span>
                                                     {$sub.name}
                                                 </span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-play"></i> Submitted</span>
+                                                <span><i class="fa-solid fa-play"></i> Zgłoszono</span>
                                                 <span>
                                                     {$sub.submitted}
                                                 </span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-brands fa-steam"></i> Steam ID</span>
+                                                <span><i class="fa-brands fa-steam"></i> SteamID</span>
                                                 {if $sub.SteamId == ""}
-                                                    <span class="text:italic">No steamid present</span>
+                                                    <span class="text:italic">Brak SteamID</span>
                                                 {else}
                                                     <a href="https://www.steamidfinder.com/lookup/{$sub.SteamId}" target="_blank" rel="noopener">{$sub.SteamId}</a>
                                                 {/if}
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-network-wired"></i> IP address</span>
+                                                <span><i class="fa-solid fa-network-wired"></i> Adres IP</span>
                                                 {if $sub.sip == ""}
-                                                    <span class="text:italic">No IP address present</span>
+                                                    <span class="text:italic">Brak adresu IP</span>
                                                 {else}
                                                     <a href="https://geoiplookup.net/geo/{$sub.sip}" target="_blank" rel="noopener">{$sub.sip}</a>
                                                 {/if}
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-server"></i> Server</span>
+                                                <span><i class="fa-solid fa-server"></i> Serwer</span>
                                                 <div id="sub{$sub.subid}">
                                                     {if $sub.hostname == ""}
-                                                        <span class="text:italic">Retrieving Hostname</span>
+                                                        <span class="text:italic">Pobieranie nazwy hosta</span>
                                                     {else}
                                                         <span>{$sub.hostname}</span>
                                                     {/if}
@@ -132,16 +132,16 @@
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-user"></i> Submitter Name</span>
+                                                <span><i class="fa-solid fa-user"></i> Nazwa zgłaszającego</span>
                                                 {if $sub.subname == ""}
-                                                    <span class="text:italic">No name present</span>
+                                                    <span class="text:italic">Brak nazwy</span>
                                                 {else}
                                                     <span>{$sub.subname}</span>
                                                 {/if}
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-network-wired"></i> Submitter IP</span>
+                                                <span><i class="fa-solid fa-network-wired"></i> IP zgłaszającego</span>
                                                 <a href="https://geoiplookup.net/geo/{$sub.ip}" target="_blank" rel="noopener">{$sub.ip}</a>
                                             </li>
 
@@ -150,7 +150,7 @@
 
                                     <div class="ban_list_comments margin-bottom">
                                         <div class="layout_box_title">
-                                            <h2><i class="fa-solid fa-pen-to-square"></i> Reason</h2>
+                                            <h2><i class="fa-solid fa-pen-to-square"></i> Powód</h2>
                                         </div>
 
                                         <div class="layout_box-child padding margin:half">
@@ -162,7 +162,7 @@
 
                                     <div class="ban_list_comments">
                                         <div class="layout_box_title">
-                                            <h2><i class="fa-regular fa-comments"></i> Comments</h2>
+                                            <h2><i class="fa-regular fa-comments"></i> Komentarze</h2>
                                         </div>
 
                                         {if $sub.commentdata != "None"}
@@ -174,7 +174,7 @@
                                                                 {if !empty($commenta.comname)}
                                                                     <span class="text:bold">{$commenta.comname|escape:'html'}</span>
                                                                 {else}
-                                                                    <span class="text:italic">Admin deleted</span>
+                                                                    <span class="text:italic">Administrator usunięty</span>
                                                                 {/if}
                                                                 <span>{$commenta.added}</span>
                                                                 {if $commenta.editcomlink != ""}
@@ -187,8 +187,8 @@
 
                                                                 {if !empty($commenta.edittime)}
                                                                     <span class="margin-top:half text:italic">
-                                                                        <i class="fas fa-pencil-alt"></i> Last edit
-                                                                        {$commenta.edittime} by {$commenta.editname}
+                                                                        <i class="fas fa-pencil-alt"></i> Ostatnia edycja
+                                                                        {$commenta.edittime} przez {$commenta.editname}
                                                                     </span>
                                                                 {/if}
                                                             </div>

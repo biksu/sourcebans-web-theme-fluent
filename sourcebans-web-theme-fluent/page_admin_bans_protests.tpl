@@ -1,24 +1,24 @@
 {if NOT $permission_protests}
     <section class="error padding">
         <i class="fas fa-exclamation-circle"></i>
-        <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+        <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
         <div class="error_content">
-            Access Denied!
+            Brak dostępu!
         </div>
 
         <div class="error_code">
-            Error code: <span class="text:bold">403 Forbidden</span>
+            Kod błędu: <span class="text:bold">403 Forbidden</span>
         </div>
     </section>
 {else}
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-gavel"></i> Ban Protests (<span id="protcount">{$protest_count}</span>)</h2>
+        <h2><i class="fas fa-gavel"></i> Odwołania od banów (<span id="protcount">{$protest_count}</span>)</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom">
-            Click a player's nickname to view information about their ban.
+            Kliknij nick gracza, aby zobaczyć informacje o jego banie.
         </div>
 
         <div class="pagination">
@@ -29,9 +29,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="text:left">Nickname</th>
-                        <th class="text:left">Steam ID</th>
-                        <th>Action</th>
+                        <th class="text:left">Nick</th>
+                        <th class="text:left">SteamID</th>
+                        <th>Akcja</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,13 +51,13 @@
 
                                 <a href="index.php?p=admin&c=bans&o=email&type=p&id={$protest.pid}"
                                     class="button button-primary margin-right:half">
-                                    Contact
+                                    Kontakt
                                 </a>
 
                                 {if $permission_editban}
                                     <button class="button button-success margin-right:half"
                                         onclick="RemoveProtest('{$protest.pid}', '{if $protest.authid!=""}{$protest.authid}{else}{$protest.ip}{/if}', '1');">
-                                        Archive
+                                        Archiwizuj
                                     </button>
                                 {/if}
                             </td>
@@ -75,69 +75,69 @@
 
                                         <ul class="ban_list_detal">
                                             <li>
-                                                <span><i class="fa-solid fa-user"></i> Player</span>
+                                                <span><i class="fa-solid fa-user"></i> Gracz</span>
                                                 <span>
                                                     <a href="./index.php?p=banlist&advSearch={$protest.authid}&advType=steamid"
-                                                        title="Show ban">
+                                                        title="Pokaż bana">
                                                         {$protest.name}
                                                     </a>
                                                 </span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-brands fa-steam"></i> Steam ID</span>
+                                                <span><i class="fa-brands fa-steam"></i> SteamID</span>
                                                 {if $protest.authid == ""}
-                                                    <span class="text:italic">No steamid present</span>
+                                                    <span class="text:italic">Brak SteamID</span>
                                                 {else}
                                                     <a href="https://www.steamidfinder.com/lookup/{$protest.authid}" target="_blank" rel="noopener">{$protest.authid}</a>
                                                 {/if}
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-network-wired"></i> IP address</span>
+                                                <span><i class="fa-solid fa-network-wired"></i> Adres IP</span>
                                                 {if $protest.ip == 'none' || $protest.ip == ''}
-                                                    <span class="text:italic">No IP address present</span>
+                                                    <span class="text:italic">Brak adresu IP</span>
                                                 {else}
                                                     <a href="https://geoiplookup.net/geo/{$protest.ip}" target="_blank" rel="noopener">{$protest.ip}</a>
                                                 {/if}
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-play"></i> Invoked on</span>
+                                                <span><i class="fa-solid fa-play"></i> Nadano</span>
                                                 <span>{$protest.date}</span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fas fa-clock"></i> End Date</span>
+                                                <span><i class="fas fa-clock"></i> Data zakończenia</span>
                                                 {if $protest.ends == 'never'}
-                                                    <span class="text:italic">Not applicable.</span>
+                                                    <span class="text:italic">Nie dotyczy.</span>
                                                 {else}
                                                     <span>{$protest.ends}</span>
                                                 {/if}
                                             </li>
 
                                             <li>
-                                                <span><i class="fas fa-question"></i> Reason</span>
+                                                <span><i class="fas fa-question"></i> Powód</span>
                                                 <span>{$protest.ban_reason}</span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fas fa-ban"></i> Banned by Admin</span>
+                                                <span><i class="fas fa-ban"></i> Zbanowany przez administratora</span>
                                                 <span>{$protest.admin}</span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-server"></i> Banned from</span>
+                                                <span><i class="fa-solid fa-server"></i> Zbanowany na</span>
                                                 <span>{$protest.server}</span>
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-network-wired"></i> Protester IP</span>
+                                                <span><i class="fa-solid fa-network-wired"></i> IP odwołującego się</span>
                                                 <a href="https://geoiplookup.net/geo/{$protest.pip}" target="_blank" rel="noopener">{$protest.pip}</a>
                                             </li>
 
                                             <li>
-                                                <span><i class="fa-solid fa-calendar-days"></i> Protested on</span>
+                                                <span><i class="fa-solid fa-calendar-days"></i> Odwołanie złożono</span>
                                                 <span>{$protest.datesubmitted}</span>
                                             </li>
                                         </ul>
@@ -145,7 +145,7 @@
 
                                     <div class="ban_list_comments margin-bottom">
                                         <div class="layout_box_title">
-                                            <h2><i class="fa-solid fa-pen-to-square"></i> Protest message</h2>
+                                            <h2><i class="fa-solid fa-pen-to-square"></i> Treść odwołania</h2>
                                         </div>
 
                                         <div class="layout_box-child padding margin:half">
@@ -157,7 +157,7 @@
 
                                     <div class="ban_list_comments">
                                         <div class="layout_box_title">
-                                            <h2><i class="fa-regular fa-comments"></i> Comments</h2>
+                                            <h2><i class="fa-regular fa-comments"></i> Komentarze</h2>
                                         </div>
 
                                         {if $protest.commentdata != "None"}
@@ -169,7 +169,7 @@
                                                                 {if !empty($commenta.comname)}
                                                                     <span class="text:bold">{$commenta.comname|escape:'html'}</span>
                                                                 {else}
-                                                                    <span class="text:italic">Admin deleted</span>
+                                                                    <span class="text:italic">Administrator usunięty</span>
                                                                 {/if}
                                                                 <span>{$commenta.added}</span>
                                                                 {if $commenta.editcomlink != ""}
@@ -182,8 +182,8 @@
 
                                                                 {if !empty($commenta.edittime)}
                                                                     <span class="margin-top:half text:italic">
-                                                                        <i class="fas fa-pencil-alt"></i> Last edit
-                                                                        {$commenta.edittime} by {$commenta.editname}
+                                                                        <i class="fas fa-pencil-alt"></i> Ostatnia edycja
+                                                                        {$commenta.edittime} przez {$commenta.editname}
                                                                     </span>
                                                                 {/if}
                                                             </div>

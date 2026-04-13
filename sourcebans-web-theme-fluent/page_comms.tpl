@@ -2,7 +2,7 @@
   <div class="flex flex-jc:center flex-ai:center">
     <div class="layout_box layout_box_medium">
       <div class="layout_box_title">
-        <h2><i class="fa-solid fa-comment"></i> {$commenttype} Comment</h2>
+        <h2><i class="fa-solid fa-comment"></i> {$commenttype} Komentarz</h2>
       </div>
 
       <div class="padding">
@@ -23,8 +23,8 @@
           <input type="hidden" name="page" id="page" value="{$page}">
 
 		{if $canedit}
-          <a class="button button-important" onclick="history.go(-1)">Cancel</a>
-		  <a class="button button-success" onclick="ProcessComment();">Add</a>
+          <a class="button button-important" onclick="history.go(-1)">Anuluj</a>
+		  <a class="button button-success" onclick="ProcessComment();">Dodaj</a>
 		{/if}
         </div>
         {foreach from=$othercomments item="com"}
@@ -36,7 +36,7 @@
                     <span class=right><b>{$com.added}</b></span> 	
                 </div>
                     {$com.commenttxt}
-                    {if $com.editname != ''}<br /><br /><i>Last edit {$com.edittime} by {$com.editname}</i>{/if}
+                    {if $com.editname != ''}<br /><br /><i>Ostatnia edycja {$com.edittime} by {$com.editname}</i>{/if}
                 </div>
             </div>
         {/foreach}
@@ -49,7 +49,7 @@
   <div class="layout_box margin-bottom padding:half flex flex-jc:space-between flex-ai:center m:flex-fd:column">
     <span>
       <a href="index.php?p=commslist&hideinactive={if $hidetext == 'Hide'}true{else}false{/if}{$searchlink|smarty_htmlspecialchars}"
-        title="{$hidetext} inactive">{$hidetext} inactive</a> | <i>Total Blocks: {$total_bans}</i>
+        title="{$hidetext} inactive">{$hidetext} nieaktywne</a> | <i>Łączna liczba blokad: {$total_bans}</i>
     </span>
     <div class="pagination">
       <span>{$ban_nav}</span>
@@ -62,13 +62,13 @@
         <table class="table_box">
           <thead>
             <tr>
-              <th>MOD/Type</th>
-              <th class="text:left">Date</th>
-              <th class="text:left">Player</th>
+              <th>MOD/Typ</th>
+              <th class="text:left">Data</th>
+              <th class="text:left">Gracz</th>
               {if !$hideadminname}
-                <th class="text:left">Admin</th>
+                <th class="text:left">Administrator</th>
               {/if}
-              <th>Length</th>
+              <th>Długość</th>
             </tr>
           </thead>
           <tbody>
@@ -80,7 +80,7 @@
                 <td class="text:center">{$ban.mod_icon}</td>
 				<td>{$ban.ban_date}</td>
                   {if empty($ban.player)}
-                    <td class="text:italic">No nickname present</td>
+                    <td class="text:italic">Brak nicku</td>
                   {else}
 				  <td>
                       {if $view_comments && $ban.commentdata != "None" && $ban.commentdata|@count > 0}
@@ -89,7 +89,7 @@
                           </div>
                       {/if}
                       {if empty($ban.player)}
-                        <span class="text:italic">No nickname present</span>
+                        <span class="text:italic">Brak nickut</span>
                       {else}
                         <span>{$ban.player|escape:'html'|smarty_stripslashes}</span>
                       {/if}
@@ -103,7 +103,7 @@
                         {$ban.admin|escape:'html'}
                       </span>
                     {else}
-                      <span class="text:italic">Admin deleted</span>
+                      <span class="text:italic">Administrator usunięty</span>
                     {/if}
                   </td>
                 {/if}
@@ -134,7 +134,7 @@
                         {/if}
 					{else}
 						<li>
-							<a class="button button-success" href='index.php?p=login'>Admin ? Sign In</a>
+							<a class="button button-success" href='index.php?p=login'>Administrator? Zaloguj się</a>
 						</li>
 					{/if}
                       </ul>
@@ -171,7 +171,7 @@
                           <span><i class="fab fa-steam-symbol"></i> Steam ID</span>
 
                           {if empty($ban.steamid)}
-                            <span class="text:italic">No Steam ID present</span>
+                            <span class="text:italic">Brak Steam ID</span>
                           {else}
                             <span>{$ban.steamid}</span>
                           {/if}
@@ -180,7 +180,7 @@
                           <span><i class="fab fa-steam-symbol"></i> Steam3 ID</span>
 
                           {if empty($ban.steamid)}
-                            <span class="text:italic">No Steam3 ID present</span>
+                            <span class="text:italic">Brak Steam3 ID</span>
                           {else}
                             <a href="http://steamcommunity.com/profiles/{$ban.steamid3}" target="_blank"
                               rel="noopener">{$ban.steamid3}</a>
@@ -189,23 +189,23 @@
                         <li>
                           <span><i class="fab fa-steam-symbol"></i> Steam Community</span>
                           {if empty($ban.steamid)}
-                            <span class="text:italic">No Steam Community ID present</span>
+                            <span class="text:italic">Brak Steam Community ID</span>
                           {else}
                             <a href="http://steamcommunity.com/profiles/{$ban.communityid}" target="_blank"
                               rel="noopener">{$ban.communityid}</a>
                           {/if}
                         </li>
                         <li>
-                          <span><i class="fas fa-play"></i> Invoked on</span>
+                          <span><i class="fas fa-play"></i> Nałożono</span>
                           <span>{$ban.ban_date}</span>
                         </li>
                         <li>
-                          <span><i class="fas fa-hourglass-half"></i> Block length</span>
+                          <span><i class="fas fa-hourglass-half"></i> Długość blokady</span>
                           <span>{$ban.banlength}</span>
                         </li>
                         {if isset($ban.unbanned) && ($ban.unbanned == true)}
                           <li>
-                            <span><i class="fas fa-user-shield"></i> Unblock reason</span>
+                            <span><i class="fas fa-user-shield"></i> Powód odblokowania</span>
                             {if !isset($ban.ureason) || $ban.ureason == ""}
                               <span class="text:italic">No reason present</span>
                             {else}
@@ -213,54 +213,54 @@
                             {/if}
                           </li>
                           <li>
-                            <span><i class="fas fa-user-shield"></i> Unblocked by Admin</span>
+                            <span><i class="fas fa-user-shield"></i> Odblokowany przez admina</span>
 
                             {if empty($ban.removedby)}
-                              <span class="text:italic">Admin deleted</span>
+                              <span class="text:italic">Admnistrator usunięty</span>
                             {else}
                               <span>{$ban.removedby|escape:'html'}</span>
                             {/if}
                           </li>
                         {/if}
                         <li>
-                          <span><i class="fas fa-clock"></i> Expires on</span>
+                          <span><i class="fas fa-clock"></i> Wygasa</span>
 
                           {if $ban.expires == "never"}
-                            <span class="text:italic">Not applicable</span>
+                            <span class="text:italic">Nie dotyczy</span>
                           {else}
                             <span>{$ban.expires}</span>
                           {/if}
                         </li>
                         <li>
-                          <span><i class="fas fa-question"></i> Reason</span>
+                          <span><i class="fas fa-question"></i> Powód</span>
 						  {if $ban.reason == ""}
-                              <span class="text:italic">No reason present</span>
+                              <span class="text:italic">Brak powodu</span>
                             {else}
                           <span>{$ban.reason}</span>
 						  {/if}
                         </li>
                         {if !$hideadminname}
                           <li>
-                            <span><i class="fas fa-ban"></i> Blocked by Admin</span>
+                            <span><i class="fas fa-ban"></i> Zablokowany przez administratora</span>
 
                             {if empty($ban.admin)}
-                              <span class="text:italic">Admin deleted</span>
+                              <span class="text:italic">Admnistrator usunięty</span>
                             {else}
                               <span>{$ban.admin|escape:'html'}</span>
                             {/if}
                           </li>
                         {/if}
 						<li>
-                                                        <span><i class="fas fa-server"></i> Blocked from</span>
+                                                        <span><i class="fas fa-server"></i> Zablokowany na</span>
                                                             <span {if $ban.server_id != 0} id="host_{$ban.ban_id}"{/if}>
 											{if $ban.server_id == 0}
-											Web Ban
+											Ban z panelu WWW
 											{else}
-											Please Wait...
+											Proszę czekać...
 											{/if}</span>
                                                     </li>
                         <li>
-                          <span><i class="fas fa-ban"></i> Total Blocks</span>
+                          <span><i class="fas fa-ban"></i> Łączna liczba blokad</span>
                           <span>{$ban.prevoff_link}
 						  	{if $view_bans}
                           		{if $ban.counts > 0 || $ban.commentdata != "None"}
@@ -274,7 +274,7 @@
                       {if $view_comments}
                         <div class="ban_list_comments margin-left responsive_show:desktop">
                           <div class="layout_box_title">
-                            <h2>Comments</h2>
+                            <h2>Komentarze</h2>
                           </div>
                           {if $ban.commentdata != "None"}
                             <ul>
@@ -285,7 +285,7 @@
                                       {if !empty($commenta.comname)}
                                         <span class="text:bold">{$commenta.comname|escape:'html'}</span>
                                       {else}
-                                        <span class="text:italic">Admin deleted</span>
+                                        <span class="text:italic">Admnistrator usunięty</span>
                                       {/if}
                                       <span>{$commenta.added}</span>
                                       {if $commenta.editcomlink != ""}
@@ -319,7 +319,7 @@
                         {if $ban.commentdata != "None"}
                             <ul class="ban_list_comments responsive_hide:desktop" style="display: contents;">
                                 <div class="layout_box_title">
-                                    <h2><i class="fa-solid fa-comments"></i> Comments <i style="font-weight: normal;font-size: smaller;">(from the most recent to the oldest)</i></h2>
+                                    <h2><i class="fa-solid fa-comments"></i> Comments <i style="font-weight: normal;font-size: smaller;">(od najnowszych do najstarszych)</i></h2>
                                 </div>
                                 <ul>
                                     {foreach from=$ban.commentdata item="commenta"}
@@ -329,7 +329,7 @@
                                                     {if !empty($commenta.comname)}
                                                         <span class="text:bold">{$commenta.comname|escape:'html'}</span>
                                                     {else}
-                                                        <span class="text:italic">Admin deleted</span>
+                                                        <span class="text:italic">Admnistrator usunięty</span>
                                                     {/if}
                                                     <span>{$commenta.added}</span>
                                                     {if $commenta.editcomlink != ""}
@@ -341,7 +341,7 @@
                                                     {if !empty($commenta.edittime)}
                                                         <span class="margin-top:half text:italic">
                                                             <i class="fas fa-pencil-alt"></i> Last edit
-                                                            {$commenta.edittime} by {if !empty($commenta.editname)}{$commenta.editname}{else}<i>Admin deleted</i>{/if}
+                                                            {$commenta.edittime} by {if !empty($commenta.editname)}{$commenta.editname}{else}<i>Admnistrator usunięty</i>{/if}
                                                         </span>
                                                     {/if}
                                                 </div>
@@ -363,7 +363,7 @@
   </div>
 
   <div class="layout_box padding:half margin-top text:right">
-    <span class="text:italic">SourceComms plugin &#038; integration to SourceBans made by <a
+    <span class="text:italic">SourceComms plugin &#038; zintegrowany z SourceBans przez <a
         href="https://github.com/ppalex7" class="text:bold" target="_blank" rel="noopener">Alex</a></span>
   </div>
 

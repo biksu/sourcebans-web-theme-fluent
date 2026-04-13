@@ -1,20 +1,20 @@
 <div class="layout_box flex:11 admin_tab_content tabcontent" id="Add new server">
     {if not $permission_addserver}
-        Access Denied
+        Brak dostępu
     {else}
         <div class="admin_tab_content_title">
-            <h2><i class="fas fa-plus"></i> Server Details</h2>
+            <h2><i class="fas fa-plus"></i> Szczegóły serwera</h2>
         </div>
 
         <div class="padding">
             <div class="margin-bottom">
-                For more information or help regarding a certain subject move your mouse over the question mark.
+                Aby uzyskać więcej informacji lub pomoc dotyczącą danego tematu, najedź kursorem na znak zapytania.
             </div>
 
             <input type="hidden" name="insert_type" value="add">
             <div class="margin-bottom:half">
                 <label for="address" class="form-label form-label:bottom">
-                    Server IP/Domain
+                    IP serwera / domena
                 </label>
                 <input type="text" TABINDEX=1 class="form-input form-full" id="address" name="address" value="{$ip}" />
                 <div id="address.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -22,7 +22,7 @@
 
             <div class="margin-bottom:half">
                 <label for="port" class="form-label form-label:bottom">
-                    Server Port
+                    Port serwera
                 </label>
                 <input type="text" TABINDEX=2 class="form-input form-full" id="port" name="port"
                     value="{if $port}{$port}{else}27015{/if}" />
@@ -31,7 +31,7 @@
 
             <div class="margin-bottom:half">
                 <label for="rcon" class="form-label form-label:bottom">
-                    RCON Password
+                    Hasło RCON
                 </label>
                 <input type="password" TABINDEX=3 class="form-input form-full" id="rcon" name="rcon" value="{$rcon}" />
                 <div id="rcon.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -39,7 +39,7 @@
 
             <div class="margin-bottom:half">
                 <label for="rcon2" class="form-label form-label:bottom">
-                    RCON Password (Confirm)
+                    Hasło RCON (potwierdź)
                 </label>
                 <input type="password" TABINDEX=4 class="form-input form-full" id="rcon2" name="rcon2" value="{$rcon}" />
                 <div id="rcon2.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -47,12 +47,12 @@
 
             <div class="margin-bottom:half">
                 <label for="mod" class="form-label form-label:bottom">
-                    Server MOD
+                    Mod serwera
                 </label>
 
                 <select name="mod" TABINDEX=5 onchange="" id="mod" class="form-select form-full">
                     {if !$edit_server}
-                        <option value="-2">Please Select...</option>
+                        <option value="-2">Wybierz...</option>
                     {/if}
                     {foreach from=$modlist item="mod"}
                         <option value='{$mod.mid}'>{$mod.name}</option>
@@ -64,7 +64,7 @@
 
             <div class="margin-bottom:half">
                 <label for="enabled" class="form-label form-label:bottom">
-                    Enabled
+                    Włączony
                 </label>
                 <input type="checkbox" id="enabled" class="form-check" name="enabled" checked="checked" />
                 <div id="enabled.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -73,7 +73,7 @@
             {if $grouplist}
                 <div class="margin-bottom:half">
                     <label class="form-label form-label:bottom">
-                        Server Groups
+                        Grupy serwerów
                     </label>
 
                     <ul class="form_ul margin-top">
@@ -98,7 +98,7 @@
                     {sb_button text=$submit_text onclick="process_add_server();" class="button button-success" id="aserver" submit=false}
                 {/if}
 
-                {sb_button text="Back" onclick="history.go(-1)" class="button button-light" id="back" submit=false}
+                {sb_button text="Wstecz" onclick="history.go(-1)" class="button button-light" id="back" submit=false}
             </div>
         </div>
     {/if}

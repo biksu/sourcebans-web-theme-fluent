@@ -13,8 +13,8 @@
 
 <div class="layout_box margin-bottom">
   <div class="layout_box_title flex flex-jc:space-between flex-ai:center">
-    <h2><i class="fa-solid fa-face-angry"></i> Latest Added Bans</h2>
-    <span style="text-align: right;">Total bans: {$total_bans}</span>
+    <h2><i class="fa-solid fa-face-angry"></i> Ostatnio dodane bany</h2>
+    <span style="text-align: right;">Łączna liczba banów: {$total_bans}</span>
   </div>
 
   <div class="padding">
@@ -22,10 +22,10 @@
       <table>
         <thead>
           <tr>
-            <th style="width: 15%"><span class="responsive_show:desktop">MOD | </span>Type</th>
-            <th style="width: 28%" class="text:left">Date/Time</th>
-			<th style="width: 28%" class="text:left">Name</th>
-            <th style="width: 28%">Length</th>
+            <th style="width: 15%"><span class="responsive_show:desktop">MOD | </span>Typ</th>
+            <th style="width: 28%" class="text:left">Data/Czas</th>
+			<th style="width: 28%" class="text:left">Nazwa</th>
+            <th style="width: 28%">Długość</th>
           </tr>
         </thead>
         <tbody>
@@ -59,8 +59,8 @@
 <div class="flex flex-ai:start flex-jc:space-bwtween m:flex-fd:column">
   <div class="layout_box flex:11 margin-right margin-bottom">
     <div class="layout_box_title flex flex-jc:space-between flex-ai:center">
-      <h2><i class="fa-solid fa-volume-xmark"></i> Latest Added Comms Block</h2>
-      <span style="text-align: right;">Total Blocks: {$total_comms}</span>
+      <h2><i class="fa-solid fa-volume-xmark"></i> Ostatnio dodane blokady komunikacji</h2>
+      <span style="text-align: right;">Łączna liczba blokad: {$total_comms}</span>
     </div>
 
     <div class="padding">
@@ -85,7 +85,7 @@
                 </td>
 				<td>
                   {if empty($player.short_name)}
-                    <span class="text:italic">No nickname present</span>
+                    <span class="text:italic">Brak nicku</span>
                   {else}
                     <span>{$player.short_name|escape:'html'}</span>
                   {/if}
@@ -104,8 +104,8 @@
 
   <div class="layout_box flex:11 margin-bottom">
     <div class="layout_box_title flex flex-jc:space-between flex-ai:center">
-      <h2><i class="fa-solid fa-hand"></i> Latest Players Blocked</h2>
-      <span style="text-align: right;">Total Stopped: {$total_blocked}</span>
+      <h2><i class="fa-solid fa-hand"></i>  Ostatnio zablokowani gracze</h2>
+      <span style="text-align: right;">Łączna liczba zatrzymanych: {$total_blocked}</span>
     </div>
 
     <div class="padding">
@@ -126,7 +126,7 @@
               {else}
                 onclick="{$player.popup}"
               {/if}
-              onmouseout="this.className='tbl_out'" onmouseover="this.className='tbl_hover'" style="cursor: pointer;" id="{$player.server}" title="Querying Server Data...">
+              onmouseout="this.className='tbl_out'" onmouseover="this.className='tbl_hover'" style="cursor: pointer;" id="{$player.server}" title=" Pobieranie danych serwera...">
                 <td class="text:center">
                   <i class="fas fa-ban fa-lg"></i>
                 </td>

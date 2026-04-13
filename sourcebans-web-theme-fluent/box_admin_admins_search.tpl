@@ -5,7 +5,7 @@
         <tbody>
           <tr class="collapse">
             <td class="text:center">
-              <span class="text:bold">Advanced Search</span> (Click)
+              <span class="text:bold">Wyszukiwanie zaawansowane</span> (Kliknij)
             </td>
           </tr>
           <tr class="table_hide">
@@ -16,7 +16,7 @@
                     <input id="name_" name="search_type" class="form-radio" type="radio" value="name" />
 
                     <label for="nick" class="form-label form-label:bottom">
-                      Nickname
+                      Nick
                     </label>
 
                     <input class="form-input form-full" type="text" id="nick" value=""
@@ -27,7 +27,7 @@
                     <input id="steam_" type="radio" name="search_type" class="form-radio" value="radiobutton" />
 
                     <label for="steam_match" class="form-label form-label:bottom form-label:right">
-                      Steam ID
+                      SteamID
                     </label>
 
                     <div class="flex">
@@ -35,8 +35,8 @@
                         onmouseup="$('steam_').checked = true" />
 
                       <select class="form-select form-full" id="steam_match" onmouseup="$('steam_').checked = true">
-                        <option value="0" selected>Exact Match</option>
-                        <option value="1">Partial Match</option>
+                        <option value="0" selected>Dokładne dopasowanie</option>
+                        <option value="1">Częściowe dopasowanie</option>
                       </select>
                     </div>
                   </div>
@@ -47,7 +47,7 @@
 
 
                       <label for="admemail" class="form-label form-label:bottom">
-                        Email
+                      E-mail
                       </label>
 
                       <input class="form-input form-full" type="text" id="admemail" value=""
@@ -59,14 +59,14 @@
                     <input id="webgroup_" type="radio" name="search_type" class="form-radio" value="radiobutton" />
 
                     <label for="webgroup" class="form-label form-label:bottom form-label:right">
-                      Web Group
+                      Grupa WWW
                     </label>
 
                     <select class="form-select form-full" id="webgroup" onmouseup="$('webgroup_').checked = true">
                       {foreach from=$webgroup_list item="webgrp"}
                         <option label="{$webgrp.name}" value="{$webgrp.gid}">{$webgrp.name}</option>
                       {/foreach}
-                      <option label="- No WebGroup Assigned -" value=" ">- No WebGroup Assigned -</option>
+                      <option label="- Brak przypisanej grupy WWW -" value=" ">- Brak przypisanej grupy WWW -</option>
                     </select>
                   </div>
 
@@ -74,7 +74,7 @@
                     <input id="srvadmgroup_" type="radio" name="search_type" class="form-radio" value="radiobutton" />
 
                     <label for="srvadmgroup" class="form-label form-label:bottom form-label:right">
-                      Server Admin Group
+                      Grupa administratorów serwera
                     </label>
 
                     <select class="form-select form-full" id="srvadmgroup" onmouseup="$('srvadmgroup_').checked = true">
@@ -82,7 +82,7 @@
                         <option label="{$srvadmgrp.name}" value="{$srvadmgrp.name}">{$srvadmgrp.name}
                         </option>
                       {/foreach}
-                      <option label="- No Server Admin Group Assigned -" value=" ">- No Server Admin Group Assigned -</option>
+                      <option label="- Brak przypisanej grupy administratorów serwera -" value=" ">- Brak przypisanej grupy administratorów serwera -</option>
                     </select>
                   </div>
 
@@ -90,14 +90,14 @@
                     <input id="srvgroup_" type="radio" name="search_type" class="form-radio" value="radiobutton" />
 
                     <label for="srvgroup" class="form-label form-label:bottom form-label:right">
-                      Server Group
+                      Grupa serwera
                     </label>
 
                     <select class="form-select form-full" id="srvgroup" onmouseup="$('srvgroup_').checked = true">
                       {foreach from=$srvgroup_list item="srvgrp"}
                         <option label="{$srvgrp.name}" value="{$srvgrp.gid}">{$srvgrp.name}</option>
                       {/foreach}
-                      <option label="- No Server Group Assigned -" value=" ">- No Server Group Assigned -</option>
+                      <option label="- Brak przypisanej grupy serwera -" value=" ">- Brak przypisanej grupy serwera -</option>
                     </select>
                   </div>
 
@@ -105,7 +105,7 @@
                     <input id="admwebflags_" name="search_type" type="radio" class="form-radio" value="radiobutton" />
 
                     <label for="admwebflag" class="form-label form-label:bottom form-label:right">
-                      Web Permissions
+                      Uprawnienia WWW
                     </label>
 
                     <select class="form-select form-full" id="admwebflag" name="admwebflag"
@@ -121,7 +121,7 @@
                     <input id="admsrvflags_" name="search_type" type="radio" class="form-radio" value="radiobutton">
 
                     <label for="admwebflag" class="form-label form-label:bottom form-label:right">
-                      Server Permissions
+                      Uprawnienia serwera
                     </label>
 
                     <select class="form-select form-full" id="admwebflag" name="admsrvflag"
@@ -138,20 +138,20 @@
 
 
                     <label for="server" class="form-label form-label:bottom form-label:right">
-                      Server
+                      Serwer
                     </label>
 
 
                     <select class="form-select form-full" id="server" onmouseup="$('admin_on_').checked = true">
                       {foreach from=$server_list item="server"}
-                      <option value="{$server.sid}" id="ss{$server.sid}">Retrieving Hostname...
+                      <option value="{$server.sid}" id="ss{$server.sid}">Pobieranie nazwy hosta...
                         ({$server.ip}:{$server.port})</option>
                       {/foreach}
                     </select>
                   </div>
 
                   <div class="flex">
-                    {sb_button text="Search" onclick="search_admins();" class="ok" id="button button-primary flex:11" submit=false}
+                    {sb_button text="Szukaj" onclick="search_admins();" class="ok" id="button button-primary flex:11" submit=false}
                   </div>
                 </div>
               </div>

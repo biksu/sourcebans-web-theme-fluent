@@ -5,7 +5,7 @@
                 <tbody>
                     <tr class="collapse">
                         <td class="text:center">
-                            <span class="text:bold">Advanced Search</span> (Click)
+                            <span class="text:bold">Wyszukiwanie zaawansowane</span> (Kliknij)
                         </td>
                     </tr>
 
@@ -20,7 +20,7 @@
                                                     value="name" />
 
                                                 <label for="name" class="form-label form-label:bottom">
-                                                    Nickname
+                                                    Nick
                                                 </label>
 
                                                 <input class="form-input form-full" type="text" id="nick" value=""
@@ -33,7 +33,7 @@
 
                                                 <label for="steam_"
                                                     class="form-label form-label:bottom form-label:right">
-                                                    Steam ID
+                                                    SteamID
                                                 </label>
 
                                                 <div class="flex">
@@ -42,8 +42,8 @@
 
                                                     <select class="form-select form-full" id="steam_match"
                                                         onmouseup="$('steam_').checked = true">
-                                                        <option value="0" selected>Exact Match</option>
-                                                        <option value="1">Partial Match</option>
+                                                        <option value="0" selected>Dokładne dopasowanie</option>
+                                                        <option value="1">Częściowe dopasowanie</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -67,7 +67,7 @@
                                                     value="radiobutton" />
 
                                                 <label for="ban_reason" class="form-label form-label:bottom">
-                                                    Reason
+                                                    Powód
                                                 </label>
 
                                                 <input class="form-input form-full" type="text" id="ban_reason" value=""
@@ -81,7 +81,7 @@
                                                     value="radiobutton" />
 
                                                 <label for="date" class="form-label form-label:bottom form-label:right">
-                                                    Date
+                                                    Data
                                                 </label>
 
                                                 <div class="flex">
@@ -102,14 +102,14 @@
 
                                                 <label for="ban_type"
                                                     class="form-label form-label:bottom form-label:right">
-                                                    Type
+                                                    Typ
                                                 </label>
 
                                                 <select class="form-select form-full" id="ban_type"
                                                     onmouseup="$('ban_type_').checked = true">
                                                     <option value="0" selected>Steam ID</option>
                                                     {if !$hideplayerips}
-                                                        <option value="1">IP Address</option>
+                                                        <option value="1">Adres IP</option>
                                                     {/if}
                                                 </select>
                                             </div>
@@ -121,7 +121,7 @@
 
                                                     <label for="ban_admin"
                                                         class="form-label form-label:bottom form-label:right">
-                                                        Admin
+                                                        Administrator
                                                     </label>
 
                                                     <select class="form-select form-full" id="ban_admin"
@@ -140,15 +140,15 @@
 
                                                 <label for="server"
                                                     class="form-label form-label:bottom form-label:right">
-                                                    Server
+                                                    Serwer
                                                 </label>
 
                                                 <select class="form-select form-full" id="server"
                                                     onmouseup="$('where_banned').checked = true">
-                                                    <option label="Web Ban" value="0">Web Ban</option>
+                                                    <option label="Ban WWW" value="0">Ban WWW</option>
                                                     {foreach from=$server_list item="server"}
-                                                        <option value="{$server.sid}" id="ss{$server.sid}">Retrieving
-                                                            Hostname...
+                                                        <option value="{$server.sid}" id="ss{$server.sid}">Pobieranie
+                                                            nazwy hosta...
                                                             ({$server.ip}:{$server.port})</option>
                                                     {/foreach}
                                                 </select>
@@ -161,7 +161,7 @@
                                             value="radiobutton" />
 
                                         <label for="other_length" class="form-label form-label:bottom form-label:right">
-                                            Length
+                                            Długość
                                         </label>
 
                                         <div class="flex">
@@ -178,44 +178,44 @@
                                                 onmouseup="$('length_').checked = true" onchange="switch_length(this);"
                                                 onmouseover="if(this.options[this.selectedIndex].value=='other')$('length').setStyle('width', '210px');if(this.options[this.selectedIndex].value=='other')this.focus();"
                                                 onblur="if(this.options[this.selectedIndex].value=='other')$('length').setStyle('width', '20px');">
-                                                <option value="0">Permanent</option>
-                                                <optgroup label="minutes">
-                                                    <option value="1">1 minute</option>
-                                                    <option value="5">5 minutes</option>
-                                                    <option value="10">10 minutes</option>
-                                                    <option value="15">15 minutes</option>
-                                                    <option value="30">30 minutes</option>
-                                                    <option value="45">45 minutes</option>
+                                                <option value="0">Permanentny</option>
+                                                <optgroup label="minuty">
+                                                    <option value="1">1 minuta</option>
+                                                    <option value="5">5 minut</option>
+                                                    <option value="10">10 minut</option>
+                                                    <option value="15">15 minut</option>
+                                                    <option value="30">30 minut</option>
+                                                    <option value="45">45 minut</option>
                                                 </optgroup>
-                                                <optgroup label="hours">
-                                                    <option value="60">1 hour</option>
-                                                    <option value="120">2 hours</option>
-                                                    <option value="180">3 hours</option>
-                                                    <option value="240">4 hours</option>
-                                                    <option value="480">8 hours</option>
-                                                    <option value="720">12 hours</option>
+                                                <optgroup label="godziny">
+                                                    <option value="60">1 godzina</option>
+                                                    <option value="120">2 godziny</option>
+                                                    <option value="180">3 godziny</option>
+                                                    <option value="240">4 godziny</option>
+                                                    <option value="480">8 godzin</option>
+                                                    <option value="720">12 godzin</option>
                                                 </optgroup>
-                                                <optgroup label="days">
-                                                    <option value="1440">1 day</option>
-                                                    <option value="2880">2 days</option>
-                                                    <option value="4320">3 days</option>
-                                                    <option value="5760">4 days</option>
-                                                    <option value="7200">5 days</option>
-                                                    <option value="8640">6 days</option>
+                                                <optgroup label="dni">
+                                                    <option value="1440">1 dzień</option>
+                                                    <option value="2880">2 dni</option>
+                                                    <option value="4320">3 dni</option>
+                                                    <option value="5760">4 dni</option>
+                                                    <option value="7200">5 dni</option>
+                                                    <option value="8640">6 dni</option>
                                                 </optgroup>
-                                                <optgroup label="weeks">
-                                                    <option value="10080">1 week</option>
-                                                    <option value="20160">2 weeks</option>
-                                                    <option value="30240">3 weeks</option>
+                                                <optgroup label="tygodnie">
+                                                    <option value="10080">1 tydzień</option>
+                                                    <option value="20160">2 tygodnie</option>
+                                                    <option value="30240">3 tygodnie</option>
                                                 </optgroup>
-                                                <optgroup label="months">
-                                                    <option value="40320">1 month</option>
-                                                    <option value="80640">2 months</option>
-                                                    <option value="120960">3 months</option>
-                                                    <option value="241920">6 months</option>
-                                                    <option value="483840">12 months</option>
+                                                <optgroup label="miesiące">
+                                                    <option value="40320">1 miesiąc</option>
+                                                    <option value="80640">2 miesiące</option>
+                                                    <option value="120960">3 miesiące</option>
+                                                    <option value="241920">6 miesięcy</option>
+                                                    <option value="483840">12 miesięcy</option>
                                                 </optgroup>
-                                                <option value="other">Other length in minutes</option>
+                                                <option value="other">Inna długość w minutach</option>
                                             </select>
 
                                             <input type="text" id="other_length" name="other_length"
@@ -230,7 +230,7 @@
                                                 value="radiobutton" />
 
                                             <label for="ban_comment" class="form-label form-label:bottom form-label:right">
-                                                Comment
+                                                Komentarz
                                             </label>
 
                                             <input class="form-input form-full" type="text" id="ban_comment" value=""
@@ -239,7 +239,7 @@
                                     {/if}
 
                                     <div class="flex">
-                                        {sb_button text="Search" onclick="search_bans();" class="button button-primary flex:11" id="searchbtn" submit=false}
+                                        {sb_button text="Szukaj" onclick="search_bans();" class="button button-primary flex:11" id="searchbtn" submit=false}
                                     </div>
                                 </div>
                             </div>

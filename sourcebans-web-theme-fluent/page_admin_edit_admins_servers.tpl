@@ -1,22 +1,22 @@
 <div class="layout_box flex:11 admin_tab_content">
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-server"></i> Admin Server Access</h2>
+        <h2><i class="fas fa-server"></i> Dostęp administratora do serwerów</h2>
     </div>
 
     <div class="padding">
         <div>
-            Please select the servers and/or groups of servers you want this admin to have access to.
+            Wybierz serwery i/lub grupy serwerów, do których ten administrator ma mieć dostęp.
         </div>
 
         {if $row_count < 1}
             <div class="message message:error margin-top:half">
-                You need to add a server or a server group, before you can setup
-                admin server permissions
+                Musisz dodać serwer lub grupę serwerów, zanim skonfigurujesz
+                uprawnienia administratora do serwerów
             </div>
         {else}
             <form action="" method="post">
                 {if $group_list}
-                    <h3>Server Groups</h3>
+                    <h3>Grupy serwerów</h3>
 
                     {foreach from=$group_list item="group"}
                         <div class="margin-bottom:half">
@@ -30,14 +30,14 @@
                 {/if}
 
                 {if $server_list}
-                    <h3>Servers</h3>
+                    <h3>Serwery</h3>
 
                     {foreach from=$server_list item="server"}
                         <div class="margin-bottom:half">
                             <input type="checkbox" class="form-check" name="servers[]" id="server_{$server.sid}"
                                 value="s{$server.sid}" onclick="" />
                             <label for="server_{$server.sid}" id="host_{$server.sid}" class="form-label:left">
-                                Please Wait...
+                                Proszę czekać...
                             </label>
                         </div>
                     {/foreach}
@@ -46,10 +46,10 @@
 
                 <div class="flex flex-ai:center flex-jc:space-between margin-top">
                     {if $row_count > 0}
-                        {sb_button text="Save Changes" class="button button-success" id="editadminserver" submit=true}
+                        {sb_button text="Zapisz zmiany" class="button button-success" id="editadminserver" submit=true}
                     {/if}
 
-                    {sb_button text="Back" onclick="history.go(-1)" class="button button-light" id="aback"}
+                    {sb_button text="Wstecz" onclick="history.go(-1)" class="button button-light" id="aback"}
                 </div>
             </form>
         {/if}

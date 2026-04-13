@@ -3,22 +3,22 @@
     <div id="0">
         <div id="msg-green" style="display:none;">
             <i class="fas fa-check fa-2x"></i>
-            <b>Ban Updated</b>
+            <b>Zaktualizowano bana</b>
             <br />
-            The ban details have been updated.<br /><br />
-            <i>Redirecting back to bans page</i>
+            Szczegóły bana zostały zaktualizowane.<br /><br />
+            <i>Przekierowywanie z powrotem do strony banów</i>
         </div>
         <div class="admin_tab_content_title">
-            <h2><i class="fas fa-user-edit"></i> Ban Details</h2>
+            <h2><i class="fas fa-user-edit"></i> Szczegóły bana</h2>
 		</div>
 		<div class="padding">
-            For more information or help regarding a certain subject move your mouse over the question mark.<br /><br />
+            Aby uzyskać więcej informacji lub pomoc dotyczącą danego tematu, najedź kursorem na znak zapytania.<br /><br />
             <input type="hidden" name="insert_type" value="add">
             <table width="90%" border="0" style="border-collapse:collapse;" id="group.details" cellpadding="3">
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Player name" message="This is the name of the player that was banned."}-Player name
+                            -{help_icon title="Nazwa gracza" message="To jest nazwa gracza, który został zbanowany."}-Nazwa gracza
                         </div>
                     </td>
                     <td>
@@ -30,14 +30,14 @@
                     <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Ban Type" message="Choose whether to ban by Steam ID or IP address."}-Ban Type
+                            -{help_icon title="Typ bana" message="Wybierz, czy banować po SteamID czy po adresie IP."}-Typ bana
                         </div>
                     </td>
                     <td>
                         <div align="left">
                             <select id="type" name="type" TABINDEX=2 class="submit-fields">
                                 <option value="0">Steam ID</option>
-                                <option value="1">IP Address</option>
+                                <option value="1">Adres IP</option>
                             </select>
                         </div>
                     </td>
@@ -45,7 +45,7 @@
                 <tr>
                     <td valign="top">
                         <div class="rowdesc">
-                            -{help_icon title="Steam ID" message="This is the Steam ID of the player that is banned. You may want to type a Community ID either."}-Steam ID
+                            -{help_icon title="SteamID" message="To jest SteamID zbanowanego gracza. Możesz też wpisać Community ID."}-SteamID
                         </div>
                     </td>
                 <td>
@@ -58,7 +58,7 @@
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="IP" message="This is the IP of the player that is banned"}-IP Address
+                            -{help_icon title="IP" message="To jest adres IP zbanowanego gracza"}-Adres IP
                         </div>
                     </td>
                     <td>
@@ -71,40 +71,40 @@
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Reason" message="The reason that this player was banned."}-Reason
+                            -{help_icon title="Powód" message="Powód, dla którego ten gracz został zbanowany."}-Powód
                         </div>
                     </td>
                     <td>
                         <div align="left">
                             <select id="listReason" name="listReason" TABINDEX=4 class="submit-fields" onChange="changeReason(this[this.selectedIndex].value);">
-                                <option value="" selected> -- Select Reason -- </option>
-                                <optgroup label="Hacking">
+                                <option value="" selected> -- Wybierz powód -- </option>
+                                <optgroup label="Cheaty">
                                     <option value="Aimbot">Aimbot</option>
                                     <option value="Antirecoil">Antirecoil</option>
                                     <option value="Wallhack">Wallhack</option>
                                     <option value="Spinhack">Spinhack</option>
                                     <option value="Multi-Hack">Multi-Hack</option>
-                                    <option value="No Smoke">No Smoke</option>
-                                    <option value="No Flash">No Flash</option>
+                                    <option value="No Smoke">Brak dymu</option>
+                                    <option value="No Flash">Brak flesha</option>
                                 </optgroup>
-                                <optgroup label="Behavior">
-                                    <option value="Team Killing">Team Killing</option>
-                                    <option value="Team Flashing">Team Flashing</option>
-                                    <option value="Spamming Mic/Chat">Spamming Mic/Chat</option>
-                                    <option value="Inappropriate Spray">Inappropriate Spray</option>
-                                    <option value="Inappropriate Language">Inappropriate Language</option>
-                                    <option value="Inappropriate Name">Inappropriate Name</option>
-                                    <option value="Ignoring Admins">Ignoring Admins</option>
-                                    <option value="Team Stacking">Team Stacking</option>
+                                <optgroup label="Zachowanie">
+                                    <option value="Team Killing">Zabijanie sojuszników</option>
+                                    <option value="Team Flashing">Oślepianie sojuszników</option>
+                                    <option value="Spamming Mic/Chat">Spam na mikrofonie/czacie</option>
+                                    <option value="Inappropriate Spray">Niestosowny spray</option>
+                                    <option value="Inappropriate Language">Niestosowny język</option>
+                                    <option value="Inappropriate Name">Niestosowny nick</option>
+                                    <option value="Ignoring Admins">Ignorowanie administratorów</option>
+                                    <option value="Team Stacking">Nierówne drużyny</option>
                                 </optgroup>
                                 -{if $customreason}-
-                                <optgroup label="Custom">
+                                <optgroup label="Własne">
                                     -{foreach from=$customreason item="creason"}-
                                     <option value="-{$creason}-">-{$creason}-</option>
                                     -{/foreach}-
                                 </optgroup>
                                 -{/if}-
-                                <option value="other">Other Reason</option>
+                                <option value="other">Inny powód</option>
                             </select>
                             <div id="dreason" style="display:none;">
                                 <textarea class="submit-fields" TABINDEX=4 cols="30" rows="5" id="txtReason" name="txtReason"></textarea>
@@ -115,47 +115,47 @@
                 </tr>
                 <tr>
                     <td valign="top" width="35%">
-                        <div class="rowdesc">-{help_icon title="Ban Length" message="Select how long you want to ban this person for."}-Ban Length </div>
+                        <div class="rowdesc">-{help_icon title="Długość bana" message="Wybierz, na jak długo chcesz zbanować tę osobę."}-Długość bana </div>
                     </td>
                     <td>
                         <div align="left">
                             <select id="banlength" name="banlength" TABINDEX=5 class="submit-fields">
-                                <option value="0">Permanent</option>
-                                <optgroup label="minutes">
-                                    <option value="1">1 minute</option>
-                                    <option value="5">5 minutes</option>
-                                    <option value="10">10 minutes</option>
-                                    <option value="15">15 minutes</option>
-                                    <option value="30">30 minutes</option>
-                                    <option value="45">45 minutes</option>
+                                <option value="0">Permanentny</option>
+                                <optgroup label="minuty">
+                                    <option value="1">1 minuta</option>
+                                    <option value="5">5 minut</option>
+                                    <option value="10">10 minut</option>
+                                    <option value="15">15 minut</option>
+                                    <option value="30">30 minut</option>
+                                    <option value="45">45 minut</option>
                                 </optgroup>
-                                <optgroup label="hours">
-                                    <option value="60">1 hour</option>
-                                    <option value="120">2 hours</option>
-                                    <option value="180">3 hours</option>
-                                    <option value="240">4 hours</option>
-                                    <option value="480">8 hours</option>
-                                    <option value="720">12 hours</option>
+                                <optgroup label="godziny">
+                                    <option value="60">1 godzina</option>
+                                    <option value="120">2 godziny</option>
+                                    <option value="180">3 godziny</option>
+                                    <option value="240">4 godziny</option>
+                                    <option value="480">8 godzin</option>
+                                    <option value="720">12 godzin</option>
                                 </optgroup>
-                                <optgroup label="days">
-                                    <option value="1440">1 day</option>
-                                    <option value="2880">2 days</option>
-                                    <option value="4320">3 days</option>
-                                    <option value="5760">4 days</option>
-                                    <option value="7200">5 days</option>
-                                    <option value="8640">6 days</option>
+                                <optgroup label="dni">
+                                    <option value="1440">1 dzień</option>
+                                    <option value="2880">2 dni</option>
+                                    <option value="4320">3 dni</option>
+                                    <option value="5760">4 dni</option>
+                                    <option value="7200">5 dni</option>
+                                    <option value="8640">6 dni</option>
                                 </optgroup>
-                                <optgroup label="weeks">
-                                    <option value="10080">1 week</option>
-                                    <option value="20160">2 weeks</option>
-                                    <option value="30240">3 weeks</option>
+                                <optgroup label="tygodnie">
+                                    <option value="10080">1 tydzień</option>
+                                    <option value="20160">2 tygodnie</option>
+                                    <option value="30240">3 tygodnie</option>
                                     </optgroup>
-                                <optgroup label="months">
-                                    <option value="43200">1 month</option>
-                                    <option value="86400">2 months</option>
-                                    <option value="129600">3 months</option>
-                                    <option value="259200">6 months</option>
-                                    <option value="518400">12 months</option>
+                                <optgroup label="miesiące">
+                                    <option value="43200">1 miesiąc</option>
+                                    <option value="86400">2 miesiące</option>
+                                    <option value="129600">3 miesiące</option>
+                                    <option value="259200">6 miesięcy</option>
+                                    <option value="518400">12 miesięcy</option>
                                 </optgroup>
                             </select>
                         </div>
@@ -165,12 +165,12 @@
                 <tr>
                     <td valign="top" width="35%">
                         <div class="rowdesc">
-                            -{help_icon title="Upload Demo" message="Click here to upload a demo with this ban submission."}-Upload Demo
+                            -{help_icon title="Wgraj demo" message="Kliknij tutaj, aby wgrać demo do tego zgłoszenia bana."}-Wgraj demo
                         </div>
                     </td>
                     <td>
                         <div align="left">
-                            -{sb_button text="Upload a Demo" onclick="childWindow=open('pages/admin.uploaddemo.php','upload','resizable=no,width=300,height=130');" class="save" id="uploaddemo" submit=false}-
+                            -{sb_button text="Wgraj demo" onclick="childWindow=open('pages/admin.uploaddemo.php','upload','resizable=no,width=300,height=130');" class="save" id="uploaddemo" submit=false}-
                         </div>
                         <div id="demo.msg" style="color:#CC0000;">
                             -{$ban_demo}-
@@ -182,8 +182,8 @@
                     <td>
                         <input type="hidden" name="did" id="did" value="" />
                         <input type="hidden" name="dname" id="dname" value="" />
-                        -{sb_button text="Save Changes" class="ok" id="editban" submit=true}-
-                        -{sb_button text="Back" onclick="history.go(-1)" class="cancel" id="back" submit=false}-
+                        -{sb_button text="Zapisz zmiany" class="ok" id="editban" submit=true}-
+                        -{sb_button text="Wstecz" onclick="history.go(-1)" class="cancel" id="back" submit=false}-
                     </td>
                 </tr>
             </table>
@@ -192,7 +192,7 @@
                 var dname = "";
                 function demo(id, name)
                 {
-                    $('demo.msg').setHTML("Uploaded: <b>" + name + "</b>");
+                    $('demo.msg').setHTML("Wgrano: <b>" + name + "</b>");
                     $('did').value = id;
                     $('dname').value = name;
                 }

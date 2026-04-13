@@ -2,7 +2,7 @@
 	<div class="table table_box">
 		{if $IN_SERVERS_PAGE && $access_bans}
 		<div class="responsive_show:desktop" style="text-align:right; width:100%">
-			<small>Hint: Right-click on a player to open a context menu with options to kick, ban, or contact the player directly.</small>
+			<small> Wskazówka: Kliknij prawym przyciskiem myszy na graczu, aby otworzyć menu kontekstowe z opcjami wyrzucenia, zbanowania lub kontaktu z graczem.</small>
 		</div>
 		{/if}
 		<table>
@@ -11,11 +11,11 @@
 					<th>MOD</th>
 					<th>OS</th>
 					<th>VAC</th>
-					<th class="text:left">Hostname</th>
-					<th class="text:left">IP address</th>
-					<th>Players</th>
-					<th>Map</th>
-					<th class="responsive_show:desktop">Connect</th>
+					<th class="text:left">Nazwa serwera</th>
+					<th class="text:left">Adres IP</th>
+					<th>Gracze</th>
+					<th>Mapa</th>
+					<th class="responsive_show:desktop">Połącz</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,13 +26,13 @@
 				</td>
 				<td id="os_{$server.sid}" class="text:center"></td>
 				<td id="vac_{$server.sid}" class="text:center"></td>
-				<td id="host_{$server.sid}"><i>Querying Server Data...</i></td>
+				<td id="host_{$server.sid}"><i> Pobieranie danych serwera...</i></td>
 				<td>{$server.ip}:{$server.port}</td>
-				<td id="players_{$server.sid}" class="text:center">N/A</td>
-				<td id="map_{$server.sid}" class="text:center">N/A</td>
+				<td id="players_{$server.sid}" class="text:center">Brak danych</td>
+				<td id="map_{$server.sid}" class="text:center">Brak danych</td>
 				<td class="text:center responsive_show:desktop">
 					<a class="button button-success" href="steam://connect/{$server.ip}:{$server.port}"><i
-						class="fa fa-sign-in"></i> Connect</a>
+						class="fa fa-sign-in"></i> Połącz</a>
 				</td>
 				</tr>
 				<tr>
@@ -52,7 +52,7 @@
 							</div>
 							<div id="noplayer_{$server.sid}" name="noplayer_{$server.sid}" style="display:none;">
 								<br />
-								<h2>No players in the server</h2>
+								<h2>Brak graczy na serwerze</h2>
 								<br />
 							</div>
 						</div>

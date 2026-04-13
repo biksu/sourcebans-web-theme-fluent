@@ -2,54 +2,54 @@
     {if NOT $permission_addadmin}
         <section class="error padding">
             <i class="fas fa-exclamation-circle"></i>
-            <div class="error_title">Oops, there's a problem (╯°□°）╯︵ ┻━┻</div>
+            <div class="error_title">Ups, wystąpił problem (╯°□°）╯︵ ┻━┻</div>
 
             <div class="error_content">
-                Access Denied!
+                Brak dostępu!
             </div>
 
             <div class="error_code">
-                Error code: <span class="text:bold">403 Forbidden</span>
+                Kod błędu: <span class="text:bold">403 Forbidden</span>
             </div>
         </section>
     {else}
         <div class="admin_tab_content_title">
-            <h2><i class="fas fa-cogs"></i> Overrides</h2>
+            <h2><i class="fas fa-cogs"></i> Nadpisania</h2>
         </div>
 
         <div class="padding">
             {if $overrides_error != ""}
                 <script type="text/javascript">
-                    ShowBox("Error", "{$overrides_error}", "red");
+                    ShowBox("Błąd", "{$overrides_error}", "red");
                 </script>
             {/if}
             {if $overrides_save_success}
                 <script type="text/javascript">
-                    ShowBox("Overrides updated", "The changes have been saved successfully.", "green",
+                    ShowBox("Zaktualizowano nadpisania", "Zmiany zostały zapisane pomyślnie.", "green",
                         "index.php?p=admin&c=admins");
                 </script>
             {/if}
 
             <div>
-                With Overrides you can change the flags or permissions on any command, either globally, or for a specific
-                group, without editing plugin source code.
+                Nadpisania pozwalają zmieniać flagi lub uprawnienia dowolnej komendy — globalnie lub dla konkretnej
+                grupy — bez edycji kodu źródłowego wtyczki.
             </div>
             <div>
-                Read about: <a href="http://wiki.alliedmods.net/Overriding_Command_Access_%28SourceMod%29"
-                    title="Overriding Command Access (SourceMod)" target="_blank" class="text:bold text:italic"
-                    rel="noopener">overriding command
-                    access</a> in the AlliedModders Wiki!
+                Czytaj na temat: <a href="http://wiki.alliedmods.net/Overriding_Command_Access_%28SourceMod%29"
+                    title="Nadpisywanie dostępu do komend (SourceMod)" target="_blank" class="text:bold text:italic"
+                    rel="noopener">nadpisywania dostępu
+                    do komend</a> na AlliedModders Wiki!
             </div>
-            <p class="text:italic">Blanking out an overrides' name will delete it.</p>
+            <p class="text:italic">Wyczyszczenie nazwy nadpisania spowoduje jego usunięcie.</p>
 
             <form action="" method="post">
                 <div class="table table_box">
                     <table>
                         <thead>
                             <tr>
-                                <th>Type</th>
-                                <th>Name</th>
-                                <th>Flags</th>
+                                <th>Typ</th>
+                                <th>Nazwa</th>
+                                <th>Flagi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,9 +58,9 @@
                                     <td>
                                         <select class="form-select form-full" name="override_type[]">
                                             <option{if $override.type == "command"} selected="selected" {/if} value="command">
-                                                Command</option>
+                                                Komenda</option>
                                                 <option{if $override.type == "group"} selected="selected" {/if} value="group">
-                                                    Group</option>
+                                                    Grupa</option>
                                         </select>
                                         <input type="hidden" name="override_id[]" value="{$override.id}" />
                                     </td>
@@ -77,8 +77,8 @@
                             <tr>
                                 <td>
                                     <select class="form-select form-full" name="new_override_type">
-                                        <option value="command">Command</option>
-                                        <option value="group">Group</option>
+                                        <option value="command">Komenda</option>
+                                        <option value="group">Grupa</option>
                                     </select>
                                 </td>
                                 <td>
@@ -95,10 +95,10 @@
                 <div class="flex flex-ai:center flex-jc:space-between margin-top">
                     <button type="submit" name="oversave" class="button button-success"
                         onmouseover="ButtonOver(&quot;oversave&quot;)" onmouseout="ButtonOver(&quot;oversave&quot;)"
-                        id="oversave">Save</button>
+                        id="oversave">Zapisz</button>
                     <button onclick="history.go(-1)" name="oback" class="button button-light"
                         onmouseover="ButtonOver(&quot;oback&quot;)" onmouseout="ButtonOver(&quot;oback&quot;)"
-                        id="oback">Back</button>
+                        id="oback">Wstecz</button>
                 </div>
             </form>
         </div>
