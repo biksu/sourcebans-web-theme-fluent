@@ -79,7 +79,7 @@
           </li>
         {else}
           <li>
-            <a class="button button-success" href='index.php?p=login'>Masz konto? Zaloguj sięn</a>
+            <a class="button button-success" href='index.php?p=login'>Masz konto? Zaloguj się</a>
           </li>
         {/if}
       </ul>
