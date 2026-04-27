@@ -36,13 +36,13 @@
                 <form method="get" action="index.php" onsubmit="validateForm(this)">
                     <input type="hidden" name="p" value="banlist" />
                     <input class="searchbox" alt="Szukaj banów" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Szukaj banów...';}"{/literal} value=" Szukaj banów..." />
-                    <input class="button_search" type="submit" name="Search" value="Search" />
+                    <input class="button_search" type="submit" name="Search" value="Szukaj" />
                 </form>
                 
                 <form method="get" action="index.php" onsubmit="validateForm(this)">
                     <input type="hidden" name="p" value="commslist" />
                     <input class="searchbox" alt="Szukaj blokad komunikacji" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Szukaj blokad komunikacji...';}"{/literal} value=" Szukaj blokad komunikacji..." />
-                    <input class="button_search" type="submit" name="Search" value="Search" />
+                    <input class="button_search" type="submit" name="Search" value="Szukaj" />
                 </form> 
             </div>
         </div>
